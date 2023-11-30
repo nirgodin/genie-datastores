@@ -550,13 +550,13 @@ aiohttp = ">=3.6.3,<3.9.0"
 asyncio-pool = "^0.6.0"
 google-api-python-client = ">=2.8,<3.0"
 opencv-python = ">=4.7,<5.0"
-tqdm = "^4.66.1"
+tqdm = ">=4.65,<5.0"
 
 [package.source]
 type = "git"
 url = "https://github.com/nirgodin/genie-common.git"
-reference = "6307bc45"
-resolved_reference = "6307bc45749df16482c84dcc40723ed988927d1c"
+reference = "b7869d8d"
+resolved_reference = "b7869d8d55c0da89c2c24b3a492b943b010fbccd"
 
 [[package]]
 name = "google-api-core"
@@ -1420,4 +1420,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.12"
-content-hash = "603cac8ac8f4823e79c8d7f27b6b62cbc728206fa2fa7f98eca329b5ecf4198e"
+content-hash = "82a6d39c2730139e6dc453b635a8392da8257bf395e57c90c91aa2a4095854d4"
