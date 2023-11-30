@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "genie-datastores"
+version = "0.1.2"
+description = ""
+authors = ["nirgodin <70273595+nirgodin@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.12"
+sqlalchemy = "<2.0.0"
+asyncmy = "0.2.8"
+asyncpg = "0.28.0"
+greenlet = "2.0.1"
+billboard-py = "^7.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+alembic = "^1.12.1"
+nest-asyncio = "^1.5.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
