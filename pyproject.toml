@@ -12,7 +12,7 @@ asyncmy = "0.2.8"
 asyncpg = "0.28.0"
 greenlet = "2.0.1"
 billboard-py = "^7.0.0"
-genie-common = {git = "https://github.com/nirgodin/genie-common.git"}
+genie-common = {git = "https://github.com/nirgodin/genie-common.git", rev = "416d0ec"}
 
 
 [tool.poetry.group.dev.dependencies]
