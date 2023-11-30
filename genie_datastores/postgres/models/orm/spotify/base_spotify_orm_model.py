@@ -1,6 +1,6 @@
 from abc import abstractmethod
 
-from postgres_client.models.orm.base_orm_model import BaseORMModel
+from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 
 
 class BaseSpotifyORMModel(BaseORMModel):

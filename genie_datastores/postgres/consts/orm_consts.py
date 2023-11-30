@@ -1,5 +1,4 @@
-# Table names
-from postgres_client.consts.spotify_consts import ID
+from genie_datastores.postgres.consts.spotify_consts import ID
 
 # Spotify
 SPOTIFY_TRACKS_TABLE = "spotify_tracks"

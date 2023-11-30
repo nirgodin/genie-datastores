@@ -4,7 +4,7 @@ from typing import Optional
 
 from billboard import ChartEntry
 
-from postgres_client.models.enum.billboard_chart import BillboardChart
+from genie_datastores.postgres.models.enum.billboard_chart import BillboardChart
 
 
 @dataclass

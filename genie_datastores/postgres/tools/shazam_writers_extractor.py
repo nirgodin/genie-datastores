@@ -1,7 +1,7 @@
 import re
 from typing import List, Optional, Generator
 
-from postgres_client.consts.shazam_consts import LYRICS_FOOTER, SECTIONS, TYPE, SHAZAM_LYRICS
+from genie_datastores.postgres.consts.shazam_consts import LYRICS_FOOTER, SECTIONS, TYPE, SHAZAM_LYRICS
 
 
 class ShazamWritersExtractor:

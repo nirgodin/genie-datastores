@@ -2,11 +2,11 @@ from typing import Optional
 
 from sqlalchemy import Column, String, ForeignKey, SmallInteger, Integer, Boolean, Float
 
-from postgres_client.consts.audio_features_consts import ACOUSTICNESS, DANCEABILITY, DURATION_MS, ENERGY, \
+from genie_datastores.postgres.consts.audio_features_consts import ACOUSTICNESS, DANCEABILITY, DURATION_MS, ENERGY, \
     INSTRUMENTALNESS, KEY, LIVENESS, LOUDNESS, MODE, SPEECHINESS, TEMPO, TIME_SIGNATURE, VALENCE
-from postgres_client.consts.orm_consts import SPOTIFY_TRACKS_ID
-from postgres_client.consts.spotify_consts import ID
-from postgres_client.models.orm.spotify.base_spotify_orm_model import BaseSpotifyORMModel
+from genie_datastores.postgres.consts.orm_consts import SPOTIFY_TRACKS_ID
+from genie_datastores.postgres.consts.spotify_consts import ID
+from genie_datastores.postgres.models.orm.spotify.base_spotify_orm_model import BaseSpotifyORMModel
 
 
 class AudioFeatures(BaseSpotifyORMModel):

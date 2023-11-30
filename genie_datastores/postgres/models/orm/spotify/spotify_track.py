@@ -1,16 +1,14 @@
 from datetime import datetime
 from typing import Optional
 
+from genie_common.utils import safe_nested_get, to_datetime
 from sqlalchemy import Column, String, ForeignKey, SmallInteger, Boolean, TIMESTAMP, ARRAY
 
-from postgres_client.consts.datetime_consts import SPOTIFY_RELEASE_DATE_ORDERED_FORMATS
-from postgres_client.consts.orm_consts import SPOTIFY_TRACKS_TABLE, SPOTIFY_ARTISTS_ID
-from postgres_client.consts.spotify_consts import TRACK, ARTISTS, ID, ALBUM, EXPLICIT, NAME, TRACK_NUMBER, RELEASE_DATE
-from postgres_client.models.orm.base_orm_model import BaseORMModel
-from postgres_client.models.orm.spotify.base_spotify_orm_model import BaseSpotifyORMModel
-from postgres_client.utils.dict_utils import safe_nested_get
-from postgres_client.utils.spotify_utils import extract_artist_id
-from postgres_client.utils.datetime_utils import to_datetime
+from genie_datastores.postgres.consts.datetime_consts import SPOTIFY_RELEASE_DATE_ORDERED_FORMATS
+from genie_datastores.postgres.consts.orm_consts import SPOTIFY_TRACKS_TABLE, SPOTIFY_ARTISTS_ID
+from genie_datastores.postgres.consts.spotify_consts import TRACK, ID, ALBUM, EXPLICIT, NAME, TRACK_NUMBER, RELEASE_DATE
+from genie_datastores.postgres.models.orm.spotify.base_spotify_orm_model import BaseSpotifyORMModel
+from genie_datastores.postgres.inner_utils.spotify_utils import extract_artist_id
 
 
 class SpotifyTrack(BaseSpotifyORMModel):

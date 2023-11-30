@@ -1,8 +1,8 @@
 from sqlalchemy import Column, String, ForeignKey, ARRAY, SmallInteger, JSON, Enum
 
-from postgres_client.consts.orm_consts import SPOTIFY_TRACKS_ID
-from postgres_client.models.enum.data_source import DataSource
-from postgres_client.models.orm.base_orm_model import BaseORMModel
+from genie_datastores.postgres.consts.orm_consts import SPOTIFY_TRACKS_ID
+from genie_datastores.postgres.models.enum.data_source import DataSource
+from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 
 
 class TrackLyrics(BaseORMModel):

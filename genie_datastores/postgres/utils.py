@@ -3,8 +3,8 @@ from typing import Type, List
 from sqlalchemy import Column, inspect, select
 from sqlalchemy.ext.asyncio import AsyncEngine
 
-from postgres_client.postgres_operations import execute_query
-from postgres_client.models.orm.base_orm_model import BaseORMModel
+from genie_datastores.postgres.operations import execute_query
+from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 
 
 def get_orm_columns(orm: Type[BaseORMModel]) -> List[Column]:

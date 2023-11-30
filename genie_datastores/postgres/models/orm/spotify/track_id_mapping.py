@@ -1,9 +1,9 @@
+from genie_common.utils import safe_nested_get
 from sqlalchemy import Column, String, ForeignKey
 
-from postgres_client import BaseSpotifyORMModel
-from postgres_client.consts.orm_consts import SPOTIFY_TRACKS_ID
-from postgres_client.consts.spotify_consts import ID, TRACK
-from postgres_client.utils.dict_utils import safe_nested_get
+from genie_datastores.postgres.consts.orm_consts import SPOTIFY_TRACKS_ID
+from genie_datastores.postgres.consts.spotify_consts import ID, TRACK
+from genie_datastores.postgres.models.orm.spotify.base_spotify_orm_model import BaseSpotifyORMModel
 
 
 class TrackIDMapping(BaseSpotifyORMModel):

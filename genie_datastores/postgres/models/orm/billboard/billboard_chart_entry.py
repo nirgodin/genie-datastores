@@ -1,9 +1,10 @@
 from sqlalchemy import String, Column, ForeignKey, Integer, Enum, TIMESTAMP, SmallInteger, Boolean, UniqueConstraint
 
-from postgres_client import BaseORMModel
-from postgres_client.consts.orm_consts import BILLBOARD_TRACK_ID
-from postgres_client.models.data_classes.chart_entry_data import ChartEntryData
-from postgres_client.models.enum.billboard_chart import BillboardChart
+from genie_datastores.postgres.consts.orm_consts import BILLBOARD_TRACK_ID
+from genie_datastores.postgres.models.data_classes.chart_entry_data import ChartEntryData
+from genie_datastores.postgres.models.enum.billboard_chart import BillboardChart
+
+from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 
 
 class BillboardChartEntry(BaseORMModel):

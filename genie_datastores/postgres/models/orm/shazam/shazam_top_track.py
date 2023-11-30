@@ -1,8 +1,7 @@
-from sqlalchemy import Column, String, Enum, SmallInteger, Integer, ForeignKey, UniqueConstraint, TIMESTAMP
+from sqlalchemy import Column, String, Enum, SmallInteger, Integer, UniqueConstraint, TIMESTAMP
 
-from postgres_client import BaseORMModel
-from postgres_client.consts.orm_consts import SHAZAM_TRACK_ID
-from postgres_client.models.enum.shazam_location import ShazamLocation
+from genie_datastores.postgres.models.enum.shazam_location import ShazamLocation
+from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 
 
 class ShazamTopTrack(BaseORMModel):
@@ -12,6 +11,6 @@ class ShazamTopTrack(BaseORMModel):
     date = Column(TIMESTAMP, nullable=False)
     location = Column(Enum(ShazamLocation), nullable=False)
     position = Column(SmallInteger, nullable=False)
-    track_id = Column(String)
+    track_id = Column(String)  # TODO: Add ForeignKey to shazam_tracks
 
     UniqueConstraint(date, location, position)

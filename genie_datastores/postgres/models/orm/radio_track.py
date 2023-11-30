@@ -1,14 +1,14 @@
 from datetime import datetime
 
+from genie_common.utils import safe_nested_get
 from sqlalchemy import Column, Integer, SmallInteger, String, TIMESTAMP, ForeignKey, UniqueConstraint
 from sqlalchemy import Enum
 
-from postgres_client.consts.orm_consts import SPOTIFY_TRACKS_ID
-from postgres_client.consts.spotify_consts import TRACK, ID, ADDED_AT, SNAPSHOT_ID, POPULARITY, FOLLOWERS, TOTAL, \
-    SPOTIFY_DATETIME_FORMAT
-from postgres_client.models.enum.spotify_station import SpotifyStation
-from postgres_client.models.orm.base_orm_model import BaseORMModel
-from postgres_client.utils.dict_utils import safe_nested_get
+from genie_datastores.postgres.consts.orm_consts import SPOTIFY_TRACKS_ID
+from genie_datastores.postgres.consts.spotify_consts import TRACK, ID, ADDED_AT, SNAPSHOT_ID, POPULARITY, FOLLOWERS, \
+    TOTAL, SPOTIFY_DATETIME_FORMAT
+from genie_datastores.postgres.models.enum.spotify_station import SpotifyStation
+from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 
 
 class RadioTrack(BaseORMModel):

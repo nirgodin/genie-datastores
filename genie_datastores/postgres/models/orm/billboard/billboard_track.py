@@ -1,12 +1,12 @@
 from typing import Optional
 
+from genie_common.utils import safe_nested_get
 from sqlalchemy import Column, String, SmallInteger
 
-from postgres_client import BaseORMModel
-from postgres_client.consts.orm_consts import BILLBOARD_TRACKS_TABLE
-from postgres_client.consts.spotify_consts import ID, TRACK
-from postgres_client.models.data_classes.chart_entry_data import ChartEntryData
-from postgres_client.utils.dict_utils import safe_nested_get
+from genie_datastores.postgres.consts.orm_consts import BILLBOARD_TRACKS_TABLE
+from genie_datastores.postgres.consts.spotify_consts import TRACK, ID
+from genie_datastores.postgres.models.data_classes.chart_entry_data import ChartEntryData
+from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 
 
 class BillboardTrack(BaseORMModel):

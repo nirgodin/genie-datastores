@@ -1,14 +1,15 @@
 from typing import Optional
 
+from genie_common.utils import safe_nested_get
 from sqlalchemy import Column, String, ForeignKey, ARRAY
 
-from postgres_client import BaseORMModel
-from postgres_client.consts.audio_features_consts import KEY
-from postgres_client.consts.orm_consts import SHAZAM_TRACKS_TABLE, SHAZAM_ARTIST_ID
-from postgres_client.consts.shazam_consts import ADAM_ID, TITLE, PRIMARY, SECTIONS, METADATA, TEXT, LABEL
-from postgres_client.consts.spotify_consts import ARTISTS, GENRES
-from postgres_client.tools import ShazamWritersExtractor
-from postgres_client.utils.dict_utils import safe_nested_get
+from genie_datastores.postgres.consts.audio_features_consts import KEY
+from genie_datastores.postgres.consts.orm_consts import SHAZAM_TRACKS_TABLE, SHAZAM_ARTIST_ID
+from genie_datastores.postgres.consts.shazam_consts import TITLE, PRIMARY, LABEL, ADAM_ID, SECTIONS, METADATA, TEXT
+from genie_datastores.postgres.consts.spotify_consts import GENRES
+from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
+from genie_datastores.postgres.tools.shazam_writers_extractor import ShazamWritersExtractor
+from genie_datastores.postgres.inner_utils.spotify_utils import extract_artist_id
 
 
 class ShazamTrack(BaseORMModel):
@@ -23,7 +24,7 @@ class ShazamTrack(BaseORMModel):
 
     @classmethod
     def from_shazam_response(cls, response: dict) -> Optional["ShazamTrack"]:
-        artist_id = cls._extract_artist_id(response)
+        artist_id = extract_artist_id(response, ADAM_ID)
         if artist_id:
             return cls(
                 id=response[KEY],
@@ -33,13 +34,6 @@ class ShazamTrack(BaseORMModel):
                 label=cls._extract_metadata_item(response, LABEL),
                 writers=ShazamWritersExtractor.extract(response)
             )
-
-    @staticmethod
-    def _extract_artist_id(response: dict) -> Optional[str]:
-        artists = response.get(ARTISTS)
-
-        if artists:
-            return artists[0][ADAM_ID]
 
     @staticmethod
     def _extract_metadata_item(response: dict, title: str) -> str:

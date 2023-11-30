@@ -1,16 +1,15 @@
 from datetime import datetime
 from typing import Optional, List
 
+from genie_common.utils import safe_nested_get, to_datetime
 from sqlalchemy import String, Column, ARRAY, TIMESTAMP
 
-from postgres_client import BaseORMModel
-from postgres_client.consts.datetime_consts import SHAZAM_DATETIME_FORMATS
-from postgres_client.consts.orm_consts import SHAZAM_ARTISTS_TABLE
-from postgres_client.consts.shazam_consts import DATA, ATTRIBUTES, ORIGIN, BORN_OR_FORMED, ARTIST_BIO, GENRE_NAMES, \
-    VIEWS, SIMILAR_ARTISTS
-from postgres_client.consts.spotify_consts import ID, NAME
-from postgres_client.utils.datetime_utils import to_datetime
-from postgres_client.utils.dict_utils import safe_nested_get
+from genie_datastores.postgres.consts.datetime_consts import SHAZAM_DATETIME_FORMATS
+from genie_datastores.postgres.consts.orm_consts import SHAZAM_ARTISTS_TABLE
+from genie_datastores.postgres.consts.shazam_consts import ATTRIBUTES, ARTIST_BIO, GENRE_NAMES, ORIGIN, DATA, \
+    BORN_OR_FORMED, VIEWS, SIMILAR_ARTISTS
+from genie_datastores.postgres.consts.spotify_consts import ID, NAME
+from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 
 
 class ShazamArtist(BaseORMModel):

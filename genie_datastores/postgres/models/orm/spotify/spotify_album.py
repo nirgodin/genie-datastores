@@ -1,14 +1,14 @@
 from typing import Optional
 
+from genie_common.utils import to_datetime
 from sqlalchemy import String, Column, SmallInteger, ForeignKey, Enum, TIMESTAMP
 
-from postgres_client.consts.datetime_consts import SPOTIFY_RELEASE_DATE_ORDERED_FORMATS
-from postgres_client.consts.orm_consts import SPOTIFY_ARTISTS_ID
-from postgres_client.consts.spotify_consts import ID, NAME, RELEASE_DATE, TOTAL_TRACKS, ALBUM_TYPE
-from postgres_client.models.enum.spotify_album_type import SpotifyAlbumType
-from postgres_client.models.orm.spotify.base_spotify_orm_model import BaseSpotifyORMModel
-from postgres_client.utils.spotify_utils import extract_artist_id
-from postgres_client.utils.datetime_utils import to_datetime
+from genie_datastores.postgres.consts.datetime_consts import SPOTIFY_RELEASE_DATE_ORDERED_FORMATS
+from genie_datastores.postgres.consts.orm_consts import SPOTIFY_ARTISTS_ID
+from genie_datastores.postgres.consts.spotify_consts import ID, NAME, RELEASE_DATE, TOTAL_TRACKS, ALBUM_TYPE
+from genie_datastores.postgres.models.enum.spotify_album_type import SpotifyAlbumType
+from genie_datastores.postgres.models.orm.spotify.base_spotify_orm_model import BaseSpotifyORMModel
+from genie_datastores.postgres.inner_utils.spotify_utils import extract_artist_id
 
 
 class SpotifyAlbum(BaseSpotifyORMModel):
