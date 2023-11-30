@@ -530,8 +530,8 @@ asyncio-pool = "^0.6.0"
 [package.source]
 type = "git"
 url = "https://github.com/nirgodin/genie-common.git"
-reference = "416d0ec"
-resolved_reference = "416d0ecb97688a4dc7f67e2707e4dae88366149f"
+reference = "42c0c66f"
+resolved_reference = "42c0c66fb0ad5b732e7f03fe80fe7bb92a2e0f25"
 
 [[package]]
 name = "greenlet"
@@ -1074,4 +1074,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.12"
-content-hash = "db50eb09229393bab7d172e0dd350a1ab7876e269dc690ef58652c60dc4686e3"
+content-hash = "858a77efb798b892fe1fde6857397b3240f5b8b53cff11a96210e334de40c9ae"
