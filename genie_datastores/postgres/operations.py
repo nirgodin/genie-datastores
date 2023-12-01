@@ -9,6 +9,8 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql import Select, Update
 from sqlalchemy.sql.elements import TextClause
 
+from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
+
 
 async def insert_records(engine: AsyncEngine, records: List[BaseORMModel]) -> None:
     async_session = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
