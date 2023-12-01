@@ -5,6 +5,7 @@ from genie_datastores.postgres.models.enum.gender import Gender
 from genie_datastores.postgres.models.enum.shazam_location import ShazamLocation
 from genie_datastores.postgres.models.enum.spotify_album_type import SpotifyAlbumType
 from genie_datastores.postgres.models.enum.spotify_station import SpotifyStation
+from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 from genie_datastores.postgres.models.orm.billboard.billboard_chart_entry import BillboardChartEntry
 from genie_datastores.postgres.models.orm.billboard.billboard_track import BillboardTrack
 from genie_datastores.postgres.models.orm.radio_track import RadioTrack
@@ -31,6 +32,7 @@ __all__ = [
     "SpotifyStation",
 
     # ORM
+    "BaseORMModel",
     "BillboardChartEntry",
     "BillboardTrack",
 

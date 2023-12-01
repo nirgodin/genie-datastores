@@ -13,7 +13,8 @@ from alembic import op
 import sqlalchemy as sa
 from sqlalchemy import text
 
-from postgres_client import AudioFeatures, execute_query, get_database_engine
+from genie_datastores.postgres.models import AudioFeatures
+from genie_datastores.postgres.operations import execute_query, get_database_engine
 
 # revision identifiers, used by Alembic.
 revision: str = '4a3c69517f0c'

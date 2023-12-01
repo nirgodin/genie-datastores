@@ -6,7 +6,7 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 from sqlalchemy.pool import NullPool
 
-from genie_datastores.postgres import *
+from genie_datastores.postgres.models import *
 from genie_datastores.postgres.operations import get_database_url
 
 # this is the Alembic Config object, which provides
