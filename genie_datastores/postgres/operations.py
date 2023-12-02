@@ -9,7 +9,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql import Select, Update
 from sqlalchemy.sql.elements import TextClause
 
-from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
+from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel, Base
 
 
 async def insert_records(engine: AsyncEngine, records: List[BaseORMModel]) -> None:
