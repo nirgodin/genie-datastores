@@ -712,8 +712,8 @@ tqdm = ">=4.65,<5.0"
 [package.source]
 type = "git"
 url = "https://github.com/nirgodin/genie-common.git"
-reference = "bd194f4c"
-resolved_reference = "bd194f4ceae7b61cce548a58797f90bafee03a6b"
+reference = "26383358"
+resolved_reference = "2638335832918b9ec79d7993c770cb4ea2645bc4"
 
 [[package]]
 name = "google-api-core"
@@ -1983,4 +1983,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.12"
-content-hash = "05157af2e518b558629ac935169d6d44ae948ba796d653891c27a699c39c924b"
+content-hash = "c747f895d9b0270c50bd354396b825d785e0d5a95d2ec0bd3725dcb272592675"
