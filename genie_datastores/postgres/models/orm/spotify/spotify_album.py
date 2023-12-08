@@ -17,7 +17,7 @@ class SpotifyAlbum(BaseSpotifyORMModel):
     id = Column(String, primary_key=True, nullable=False)
     artist_id = Column(String, ForeignKey(SPOTIFY_ARTISTS_ID), nullable=False)
     group = Column(Enum(SpotifyAlbumType))
-    label = Column(String)
+    label = Column(String)  # TODO: Should remove, exists in shazam_tracks
     name = Column(String, nullable=False)
     release_date = Column(TIMESTAMP)
     total_tracks = Column(SmallInteger, nullable=False)
