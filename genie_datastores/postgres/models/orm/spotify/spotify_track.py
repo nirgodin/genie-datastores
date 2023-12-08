@@ -21,7 +21,7 @@ class SpotifyTrack(BaseSpotifyORMModel):
     name = Column(String, nullable=False)
     number = Column(SmallInteger, nullable=False)
     release_date = Column(TIMESTAMP)
-    writers = Column(ARRAY(String))
+    has_name_embeddings = Column(Boolean, nullable=False, default=False)
 
     @classmethod
     def from_spotify_response(cls, response: dict) -> "SpotifyTrack":
@@ -34,7 +34,7 @@ class SpotifyTrack(BaseSpotifyORMModel):
             name=inner_track[NAME],
             number=inner_track[TRACK_NUMBER],
             release_date=cls._extract_release_date(inner_track),
-            writers=None  # TODO: Rethink
+            has_name_embeddings=False
         )
 
     @staticmethod
