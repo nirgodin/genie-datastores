@@ -5,7 +5,7 @@ from typing import Union, List
 
 from genie_common.tools import logger
 from numpy import ndarray
-from pymilvus import connections, Collection, SearchResult
+from pymilvus import connections, SearchResult
 
 from genie_datastores.milvus.models import CollectionConfig, SearchParams
 
@@ -50,11 +50,11 @@ def milvus_session():
             uri=get_milvus_url(),
             token=get_milvus_token()
         )
-        logger.info("Successfully created Milvus connection")
+        logger.debug("Successfully created Milvus connection")
         yield
 
     finally:
-        logger.info("Disconnecting Milvus")
+        logger.debug("Disconnecting Milvus")
         connections.disconnect("default")
 
 
