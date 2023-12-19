@@ -24,3 +24,7 @@ class Artist(BaseORMModel):
     city = Column(String)
     latitude = Column(Float)
     longitude = Column(Float)
+
+    @classmethod
+    def from_id(cls, id_: str) -> "Artist":
+        return Artist(id=id_)
