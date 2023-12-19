@@ -1,12 +1,12 @@
 import subprocess
 
-MESSAGE = "embeddings non-null constraint"
+MESSAGE = "remove spotify artists columns"
 REVISION = "heads"
 AUTOGENERATE = True
 
 
 def generate_revision():
-    command = f'alembic revision --autogenerate -m "{MESSAGE}"'
+    command = f'alembic revision -m "{MESSAGE}"'
     if AUTOGENERATE:
         command += ' --autogenerate'
 
@@ -14,7 +14,7 @@ def generate_revision():
 
 
 if __name__ == '__main__':
-    # generate_revision()
-    subprocess.run(f"alembic upgrade {REVISION}", shell=True)
+    generate_revision()
+    # subprocess.run(f"alembic upgrade {REVISION}", shell=True)
     # subprocess.run(f"alembic downgrade {REVISION}", shell=True)
     # subprocess.run(f"alembic stamp {REVISION}", shell=True)
