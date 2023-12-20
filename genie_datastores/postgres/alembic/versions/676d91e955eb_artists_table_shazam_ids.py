@@ -15,7 +15,8 @@ from sqlalchemy import select
 from tools.data_chunks_generator import DataChunksGenerator
 from tqdm import tqdm
 
-from genie_datastores.postgres.models import TrackIDMapping, Artist
+from genie_datastores.postgres.models import TrackIDMapping, Artist, SpotifyArtist, SpotifyTrack, ShazamArtist, \
+    ShazamTrack
 from genie_datastores.postgres.operations import get_database_engine, execute_query
 from genie_datastores.postgres.utils import update_by_mapping
 
@@ -28,10 +29,17 @@ depends_on: Union[str, Sequence[str], None] = None
 
 async def map_shazam_ids():
     engine = get_database_engine()
-    query = select(TrackIDMapping.id, TrackIDMapping.shazam_id)
+    query = (
+        select(SpotifyArtist.id, ShazamArtist.id)
+        .where(TrackIDMapping.id == SpotifyTrack.id)
+        .where(TrackIDMapping.shazam_id == ShazamTrack.id)
+        .where(TrackIDMapping.shazam_id.isnot(None))
+        .where(SpotifyArtist.id == SpotifyTrack.artist_id)
+        .where(ShazamArtist.id == ShazamTrack.artist_id)
+    )
     query_result = await execute_query(engine=engine, query=query)
     records = query_result.all()
-    chunks = list(DataChunksGenerator().generate_data_chunks(records, None))
+    chunks = list(DataChunksGenerator(max_chunks_number=None).generate_data_chunks(records, None))
 
     with tqdm(total=len(chunks)) as progress_bar:
         for chunk in chunks:

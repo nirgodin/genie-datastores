@@ -44,7 +44,7 @@ async def create_ids_records() -> None:
     query_result = await execute_query(engine=engine, query=query)
     raw_records = [dict(res._mapping) for res in query_result.all()]
     records = [Artist(**record) for record in raw_records]
-    chunks = list(DataChunksGenerator().generate_data_chunks(records, None))
+    chunks = list(DataChunksGenerator(max_chunks_number=None).generate_data_chunks(records, None))
 
     with tqdm(total=len(chunks)) as progress_bar:
         for chunk in chunks:
