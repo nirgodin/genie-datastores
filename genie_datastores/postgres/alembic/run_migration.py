@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "remove spotify artists columns"
+MESSAGE = "add artist about column"
 REVISION = "heads"
 AUTOGENERATE = True
 
@@ -14,7 +14,7 @@ def generate_revision():
 
 
 if __name__ == '__main__':
-    generate_revision()
-    # subprocess.run(f"alembic upgrade {REVISION}", shell=True)
+    # generate_revision()
+    subprocess.run(f"alembic upgrade {REVISION}", shell=True)
     # subprocess.run(f"alembic downgrade {REVISION}", shell=True)
     # subprocess.run(f"alembic stamp {REVISION}", shell=True)

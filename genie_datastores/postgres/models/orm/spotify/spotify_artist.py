@@ -1,11 +1,9 @@
 from typing import List, Optional
 
-from sqlalchemy import Column, String, ARRAY, Enum, TIMESTAMP, Boolean
+from sqlalchemy import Column, String, ARRAY
 
 from genie_datastores.postgres.consts.orm_consts import SPOTIFY_ARTISTS_TABLE, ID
 from genie_datastores.postgres.consts.spotify_consts import NAME, GENRES
-from genie_datastores.postgres.models.enum.data_source import DataSource
-from genie_datastores.postgres.models.enum.gender import Gender
 from genie_datastores.postgres.models.orm.spotify.base_spotify_orm_model import BaseSpotifyORMModel
 
 
@@ -14,6 +12,7 @@ class SpotifyArtist(BaseSpotifyORMModel):
 
     id = Column(String, primary_key=True, nullable=False)
     name = Column(String, nullable=False)
+    about = Column(String)
     facebook_name = Column(String)
     genres = Column(ARRAY(String))
     instagram_name = Column(String)
