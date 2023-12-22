@@ -13,9 +13,11 @@ class Artist(BaseORMModel):
     shazam_id = Column(String, ForeignKey(SHAZAM_ARTIST_ID))
     birth_date = Column(TIMESTAMP)
     death_date = Column(TIMESTAMP)
+    birth_date_source = Column(Enum(DataSource))
     gender = Column(Enum(Gender))
     gender_source = Column(Enum(DataSource))
     is_israeli = Column(Boolean)
+    is_israeli_source = Column(Enum(DataSource))
     is_lgbtq = Column(Boolean)
     primary_genre = Column(String)  # TODO: Consider making enum
     country = Column(String)

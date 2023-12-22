@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "add artist about column"
+MESSAGE = "fill birth day source column"
 REVISION = "heads"
-AUTOGENERATE = True
+AUTOGENERATE = False
 
 
 def generate_revision():
