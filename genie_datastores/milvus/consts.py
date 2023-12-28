@@ -1,0 +1,6 @@
+COLLECTION_NAME = "collectionName"
+DATA = "data"
+FILTER = "filter"
+LIMIT = "limit"
+OFFSET = "offset"
+OUTPUT_FIELDS = "outputFields"
