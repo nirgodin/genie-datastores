@@ -23,11 +23,11 @@ class RedisClient:
 
                 if result is None:
                     result = await RedisClient._execute_and_set_cache(
-                        redis=redis,
-                        cache_key=cache_key,
-                        ttl=ttl,
-                        encoder=encoder,
-                        func=func,
+                        redis,
+                        cache_key,
+                        ttl,
+                        encoder,
+                        func,
                         *args,
                         **kwargs
                     )
