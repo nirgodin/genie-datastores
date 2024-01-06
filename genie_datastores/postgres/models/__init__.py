@@ -1,5 +1,6 @@
 from genie_datastores.postgres.models.data_classes.chart_entry_data import ChartEntryData
 from genie_datastores.postgres.models.enum.billboard_chart import BillboardChart
+from genie_datastores.postgres.models.enum.chart import Chart
 from genie_datastores.postgres.models.enum.data_source import DataSource
 from genie_datastores.postgres.models.enum.gender import Gender
 from genie_datastores.postgres.models.enum.shazam_location import ShazamLocation
@@ -9,6 +10,7 @@ from genie_datastores.postgres.models.orm.artist import Artist
 from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 from genie_datastores.postgres.models.orm.billboard.billboard_chart_entry import BillboardChartEntry
 from genie_datastores.postgres.models.orm.billboard.billboard_track import BillboardTrack
+from genie_datastores.postgres.models.orm.chart_entry import ChartEntry
 from genie_datastores.postgres.models.orm.radio_track import RadioTrack
 from genie_datastores.postgres.models.orm.shazam.shazam_artist import ShazamArtist
 from genie_datastores.postgres.models.orm.shazam.shazam_top_track import ShazamTopTrack
@@ -26,6 +28,7 @@ __all__ = [
 
     # Enum
     "BillboardChart",
+    "Chart",
     "DataSource",
     "Gender",
     "ShazamLocation",
@@ -49,5 +52,6 @@ __all__ = [
 
     "RadioTrack",
     "TrackLyrics",
-    "Artist"
+    "Artist",
+    "ChartEntry"
 ]

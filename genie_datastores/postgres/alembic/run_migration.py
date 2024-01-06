@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "fill birth day source column"
+MESSAGE = "add charts table"
 REVISION = "heads"
-AUTOGENERATE = False
+AUTOGENERATE = True
 
 
 def generate_revision():
