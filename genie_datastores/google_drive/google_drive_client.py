@@ -6,11 +6,12 @@ from googleapiclient.discovery import build, Resource
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
 
-from genie_common.models.google import GoogleDriveDownloadMetadata, GoogleDriveUploadMetadata
 from genie_common.tools import logger
 
 from genie_datastores.google_drive.google_consts import SERVICE_ACCOUNT_SECRETS_PATH, \
     GOOGLE_SERVICE_ACCOUNT_CREDENTIALS, PARENTS, FILES, ID
+from genie_datastores.google_drive.models.google_drive_download_metadata import GoogleDriveDownloadMetadata
+from genie_datastores.google_drive.models.google_drive_upload_metadata import GoogleDriveUploadMetadata
 
 
 class GoogleDriveClient:
