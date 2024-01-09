@@ -1,5 +1,6 @@
 import json
 import os
+from typing import List
 
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build, Resource
@@ -50,13 +51,17 @@ class GoogleDriveClient:
                 media.stream().close()
 
     def download_all_dir_files(self, folder_id: str, local_dir: str) -> None:
-        logger.info(f"Starting to download all `{folder_id}` files to `{local_dir}`")
-        query = f"'{folder_id}' in {PARENTS}"
-        results = self._drive_service.files().list(q=query).execute()
-        files = results.get(FILES, [])
+        files = self.list_dir_files(folder_id)
         files_metadata = [GoogleDriveDownloadMetadata.from_drive_file(file, local_dir) for file in files]
 
         self.download(*files_metadata)
+
+    def list_dir_files(self, folder_id: str) -> List[dict]:
+        logger.info(f"Starting to list all `{folder_id}` files")
+        query = f"'{folder_id}' in {PARENTS}"
+        results = self._drive_service.files().list(q=query).execute()
+
+        return results.get(FILES, [])
 
     def clean_folder(self, folder_id: str) -> None:
         query = f"'{folder_id}' in {PARENTS} and trashed=false"
