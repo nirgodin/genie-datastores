@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "add charts table"
+MESSAGE = "add spotify charts to charts enum"
 REVISION = "heads"
-AUTOGENERATE = True
+AUTOGENERATE = False
 
 
 def generate_revision():

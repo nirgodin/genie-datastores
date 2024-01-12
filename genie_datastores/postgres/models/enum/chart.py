@@ -8,3 +8,5 @@ class Chart(Enum):
     GLGLZ_WEEKLY_ISRAELI = "glglz_weekly_israeli"
     KOL_ISRAEL_WEEKLY_INTERNATIONAL = "kol_israel_weekly_international"
     KOL_ISRAEL_WEEKLY_ISRAELI = "kol_israel_weekly_israeli"
+    SPOTIFY_DAILY_ISRAELI = "spotify_daily_israeli"
+    SPOTIFY_DAILY_INTERNATIONAL = "spotify_daily_international"
