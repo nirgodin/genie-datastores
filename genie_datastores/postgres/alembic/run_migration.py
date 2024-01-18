@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "add spotify charts to charts enum"
+MESSAGE = "make chart key column nullable"
 REVISION = "heads"
-AUTOGENERATE = False
+AUTOGENERATE = True
 
 
 def generate_revision():

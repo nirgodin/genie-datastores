@@ -12,8 +12,8 @@ class ChartEntry(BaseORMModel):
     track_id = Column(String, ForeignKey(SPOTIFY_TRACKS_ID), nullable=False)
     chart = Column(Enum(Chart), nullable=False)
     date = Column(TIMESTAMP, nullable=False)
-    key = Column(String, nullable=False)
     position = Column(SmallInteger, nullable=False)
     comment = Column(String)
+    key = Column(String)
 
     UniqueConstraint(track_id, chart, date)
