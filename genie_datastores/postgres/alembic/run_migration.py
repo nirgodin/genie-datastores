@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "make chart key column nullable"
+MESSAGE = "Add mako hit list chart"
 REVISION = "heads"
-AUTOGENERATE = True
+AUTOGENERATE = False
 
 
 def generate_revision():
