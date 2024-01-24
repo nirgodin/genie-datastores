@@ -1,18 +1,14 @@
-import json
-import os
 from typing import List
 
-from google.oauth2.service_account import Credentials
+from genie_common.tools import logger
 from googleapiclient.discovery import build, Resource
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
 
-from genie_common.tools import logger
-
-from genie_datastores.google_drive.google_consts import SERVICE_ACCOUNT_SECRETS_PATH, \
-    GOOGLE_SERVICE_ACCOUNT_CREDENTIALS, PARENTS, FILES, ID
-from genie_datastores.google_drive.models.google_drive_download_metadata import GoogleDriveDownloadMetadata
-from genie_datastores.google_drive.models.google_drive_upload_metadata import GoogleDriveUploadMetadata
+from genie_datastores.google.google_consts import PARENTS, FILES, ID
+from genie_datastores.google.google_drive.models.google_drive_download_metadata import GoogleDriveDownloadMetadata
+from genie_datastores.google.google_drive.models.google_drive_upload_metadata import GoogleDriveUploadMetadata
+from genie_datastores.google.google_utils import build_google_credentials
 
 
 class GoogleDriveClient:
@@ -24,7 +20,7 @@ class GoogleDriveClient:
         drive_service = build(
             serviceName='drive',
             version='v3',
-            credentials=cls._build_credentials()
+            credentials=build_google_credentials()
         )
         return cls(drive_service)
 
@@ -72,15 +68,3 @@ class GoogleDriveClient:
             self._drive_service.files().delete(fileId=file[ID]).execute()
 
         logger.info(f"All folder `{folder_id}` contents deleted successfully!")
-
-    @staticmethod
-    def _build_credentials() -> Credentials:
-        if os.path.exists(SERVICE_ACCOUNT_SECRETS_PATH):
-            return Credentials.from_service_account_file(SERVICE_ACCOUNT_SECRETS_PATH)
-
-        elif GOOGLE_SERVICE_ACCOUNT_CREDENTIALS in os.environ.keys():
-            credentials = json.loads(os.environ[GOOGLE_SERVICE_ACCOUNT_CREDENTIALS])
-            return Credentials.from_service_account_info(credentials)
-
-        else:
-            raise ValueError('Missing Google service account credentials')
