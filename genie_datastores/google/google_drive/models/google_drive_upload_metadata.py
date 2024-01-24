@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from genie_datastores.google_drive.google_consts import NAME, PARENTS
+from genie_datastores.google.google_consts import NAME, PARENTS
 
 
 @dataclass
