@@ -67,7 +67,7 @@ def get_database_engine() -> AsyncEngine:
 async def read_sql(engine: AsyncEngine, query: Union[Select, TextClause]) -> DataFrame:
     def _wrap_read_sql(con: AsyncConnection, sql: Union[Select, TextClause]):
         """ This method is wrapped to match the conn.run_sync sqlalchemy api """
-        return pd.read_sql(sql, con)
+        return pd.read_sql_query(sql, con)
 
     async with engine.begin() as connection:
         return await connection.run_sync(_wrap_read_sql, query)
