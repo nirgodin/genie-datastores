@@ -27,7 +27,7 @@ nest-asyncio = "^1.5.8"
 google_drive = ["google-api-python-client"]
 google_sheets = ["gspread", "pandas"]
 milvus = ["dataclasses-json"]
-postgres = ["billboard-py", "greenlet", "asyncpg", "asyncmy", "sqlalchemy"]
+postgres = ["billboard-py", "greenlet", "asyncpg", "asyncmy", "sqlalchemy", "pandas"]
 redis = ["aioredis"]
 
 [build-system]
