@@ -17,8 +17,8 @@ class ShareSettings:
     def to_kwargs(self) -> Dict[str, Union[str, bool]]:
         return {
             "email_address": self.email,
-            "perm_type": self.permission_type,
-            "role": self.role,
+            "perm_type": self.permission_type.value,
+            "role": self.role.value,
             "notify": self.notify,
             "email_message": self.notification_message,
             "with_link": self.with_link
