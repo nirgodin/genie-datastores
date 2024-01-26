@@ -6,7 +6,7 @@ from gspread import Client, Spreadsheet, Worksheet
 from gspread.exceptions import APIError
 from pandas import DataFrame
 
-from genie_datastores.google.google_sheets.models.share_settings import ShareSettings
+from genie_datastores.google.sheets.models.share_settings import ShareSettings
 from genie_datastores.google.google_utils import load_google_credentials
 
 

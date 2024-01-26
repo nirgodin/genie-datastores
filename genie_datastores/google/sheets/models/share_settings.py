@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import Optional, Union, Dict
 
-from genie_datastores.google.google_sheets.models.permission_type import PermissionType
-from genie_datastores.google.google_sheets.models.role import Role
+from genie_datastores.google.sheets.models.permission_type import PermissionType
+from genie_datastores.google.sheets.models.role import Role
 
 
 @dataclass

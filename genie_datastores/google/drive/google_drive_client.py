@@ -7,8 +7,8 @@ from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
 
 from genie_datastores.google.google_consts import PARENTS, FILES, ID
-from genie_datastores.google.google_drive.models.google_drive_download_metadata import GoogleDriveDownloadMetadata
-from genie_datastores.google.google_drive.models.google_drive_upload_metadata import GoogleDriveUploadMetadata
+from genie_datastores.google.drive.models.google_drive_download_metadata import GoogleDriveDownloadMetadata
+from genie_datastores.google.drive.models.google_drive_upload_metadata import GoogleDriveUploadMetadata
 from genie_datastores.google.google_utils import load_google_credentials
 
 
