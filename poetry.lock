@@ -607,8 +607,8 @@ tqdm = ">=4.65,<5.0"
 [package.source]
 type = "git"
 url = "https://github.com/nirgodin/genie-common.git"
-reference = "e6427657"
-resolved_reference = "e6427657a26cf35b4ffe3a359aadaf7aa163e012"
+reference = "a1b7f583"
+resolved_reference = "a1b7f583adc161567a64e9acdc361f457267186d"
 
 [[package]]
 name = "google-api-core"
@@ -1717,4 +1717,4 @@ redis = ["aioredis"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.12"
-content-hash = "58e581a2e4302d25ece0ed420936b43f8fa4e83821e0721a6d8c628c3dbb5352"
+content-hash = "9bc32073893bea2090e4878b671a7045f5e30b0d6b04a992d5cd207e9fe1ed42"
