@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "Add mako hit list chart"
+MESSAGE = "Allow null chart entry track id"
 REVISION = "heads"
-AUTOGENERATE = False
+AUTOGENERATE = True
 
 
 def generate_revision():
