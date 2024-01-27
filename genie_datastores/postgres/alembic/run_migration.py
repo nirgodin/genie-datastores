@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "Allow null chart entry track id"
+MESSAGE = "tracks_and_decisions_tables"
 REVISION = "heads"
 AUTOGENERATE = True
 
