@@ -10,3 +10,7 @@ class Track(BaseORMModel):
     id = Column(String, ForeignKey(SPOTIFY_TRACKS_ID), primary_key=True, nullable=False)
     primary_genre = Column(Enum(PrimaryGenre))
     is_cover = Column(Boolean, default=False)
+
+    @classmethod
+    def from_id(cls, id_: str) -> "Track":
+        return cls(id=id_)

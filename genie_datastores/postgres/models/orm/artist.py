@@ -29,4 +29,4 @@ class Artist(BaseORMModel):
 
     @classmethod
     def from_id(cls, id_: str) -> "Artist":
-        return Artist(id=id_)
+        return cls(id=id_)
