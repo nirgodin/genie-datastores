@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "tracks_and_decisions_tables"
+MESSAGE = "add_entry_metadata_column"
 REVISION = "heads"
 AUTOGENERATE = True
 

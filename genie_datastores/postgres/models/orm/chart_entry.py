@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, TIMESTAMP, SmallInteger, UniqueConstraint, Enum, \
-    CheckConstraint
+    CheckConstraint, JSON
 
 from genie_datastores.postgres.consts.orm_consts import SPOTIFY_TRACKS_ID
 from genie_datastores.postgres.models.enum.chart import Chart
@@ -14,6 +14,7 @@ class ChartEntry(BaseORMModel):
     date = Column(TIMESTAMP, nullable=False)
     position = Column(SmallInteger, nullable=False)
     comment = Column(String)
+    entry_metadata = Column(JSON)
     key = Column(String)
     track_id = Column(String, ForeignKey(SPOTIFY_TRACKS_ID))
 
