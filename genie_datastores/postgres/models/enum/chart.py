@@ -3,6 +3,7 @@ from enum import Enum
 
 class Chart(Enum):
     BILLBOARD_HOT_100 = "billboard_hot_100"
+    EUROVISION = "eurovision"
     GALATZ_WEEKLY_ISRAELI = "galatz_weekly_israeli"
     GLGLZ_WEEKLY_INTERNATIONAL = "glglz_weekly_international"
     GLGLZ_WEEKLY_ISRAELI = "glglz_weekly_israeli"

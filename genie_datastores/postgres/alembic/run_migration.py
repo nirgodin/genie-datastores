@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "add_entry_metadata_column"
+MESSAGE = "eurovision_chart"
 REVISION = "heads"
-AUTOGENERATE = True
+AUTOGENERATE = False
 
 
 def generate_revision():
