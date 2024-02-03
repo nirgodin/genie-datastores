@@ -33,7 +33,6 @@ class SpotifyTrack(BaseSpotifyORMModel):
             name=inner_track[NAME],
             number=inner_track[TRACK_NUMBER],
             release_date=cls._extract_release_date(inner_track),
-            has_name_embeddings=False
         )
 
     @staticmethod
