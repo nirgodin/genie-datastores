@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "eurovision_chart"
+MESSAGE = "copy_embeddings_column_to_tracks_table"
 REVISION = "heads"
-AUTOGENERATE = False
+AUTOGENERATE = True
 
 
 def generate_revision():
@@ -14,7 +14,7 @@ def generate_revision():
 
 
 if __name__ == '__main__':
-    # generate_revision()
-    subprocess.run(f"alembic upgrade {REVISION}", shell=True)
+    generate_revision()
+    # subprocess.run(f"alembic upgrade {REVISION}", shell=True)
     # subprocess.run(f"alembic downgrade {REVISION}", shell=True)
     # subprocess.run(f"alembic stamp {REVISION}", shell=True)
