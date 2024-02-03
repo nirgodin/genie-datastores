@@ -2,13 +2,13 @@ from datetime import datetime
 from typing import Optional
 
 from genie_common.utils import safe_nested_get, to_datetime
-from sqlalchemy import Column, String, ForeignKey, SmallInteger, Boolean, TIMESTAMP, ARRAY
+from sqlalchemy import Column, String, ForeignKey, SmallInteger, Boolean, TIMESTAMP
 
 from genie_datastores.postgres.consts.datetime_consts import SPOTIFY_RELEASE_DATE_ORDERED_FORMATS
 from genie_datastores.postgres.consts.orm_consts import SPOTIFY_TRACKS_TABLE, SPOTIFY_ARTISTS_ID
 from genie_datastores.postgres.consts.spotify_consts import TRACK, ID, ALBUM, EXPLICIT, NAME, TRACK_NUMBER, RELEASE_DATE
-from genie_datastores.postgres.models.orm.spotify.base_spotify_orm_model import BaseSpotifyORMModel
 from genie_datastores.postgres.inner_utils.spotify_utils import extract_artist_id
+from genie_datastores.postgres.models.orm.spotify.base_spotify_orm_model import BaseSpotifyORMModel
 
 
 class SpotifyTrack(BaseSpotifyORMModel):
@@ -21,7 +21,6 @@ class SpotifyTrack(BaseSpotifyORMModel):
     name = Column(String, nullable=False)
     number = Column(SmallInteger, nullable=False)
     release_date = Column(TIMESTAMP)
-    has_name_embeddings = Column(Boolean, nullable=False, default=False)
 
     @classmethod
     def from_spotify_response(cls, response: dict) -> "SpotifyTrack":

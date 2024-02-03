@@ -8,8 +8,8 @@ class Track(BaseORMModel):
     __tablename__ = "tracks"
 
     id = Column(String, ForeignKey(SPOTIFY_TRACKS_ID), primary_key=True, nullable=False)
-    has_name_embeddings = Column(Boolean, default=False)
-    is_cover = Column(Boolean, default=False)
+    has_name_embeddings = Column(Boolean, nullable=False, default=False)
+    is_cover = Column(Boolean, nullable=False, default=False)
     primary_genre = Column(Enum(PrimaryGenre))
 
     @classmethod
