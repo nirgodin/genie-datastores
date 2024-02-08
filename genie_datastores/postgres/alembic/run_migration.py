@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "remove_israeli_source_column"
+MESSAGE = "add_every_hit_chart"
 REVISION = "heads"
-AUTOGENERATE = True
+AUTOGENERATE = False
 
 
 def generate_revision():

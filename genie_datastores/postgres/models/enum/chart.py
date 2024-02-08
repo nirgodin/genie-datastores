@@ -12,3 +12,4 @@ class Chart(Enum):
     SPOTIFY_DAILY_ISRAELI = "spotify_daily_israeli"
     SPOTIFY_DAILY_INTERNATIONAL = "spotify_daily_international"
     MAKO_WEEKLY_HIT_LIST = "mako_weekly_hit_list"
+    UK_EVERY_HIT = "uk_every_hit"
