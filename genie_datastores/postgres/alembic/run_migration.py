@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "remove_old_embeddings_column_and_disallow_nulls"
+MESSAGE = "remove_israeli_source_column"
 REVISION = "heads"
 AUTOGENERATE = True
 

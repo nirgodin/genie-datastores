@@ -12,3 +12,4 @@ class DataSource(Enum):
     SHAZAM = "shazam"
     SPOTIFY_EQUAL_PLAYLISTS = "spotify_equal_playlists"
     SPOTIFY_IMAGES = "spotify_images"
+    CHARTS = "charts"

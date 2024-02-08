@@ -17,7 +17,6 @@ class Artist(BaseORMModel):
     gender = Column(Enum(Gender))
     gender_source = Column(Enum(DataSource))
     is_israeli = Column(Boolean)
-    is_israeli_source = Column(Enum(DataSource))
     is_lgbtq = Column(Boolean)
     primary_genre = Column(String)  # TODO: Consider making enum
     country = Column(String)
