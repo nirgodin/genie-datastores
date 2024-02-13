@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "add_every_hit_chart"
+MESSAGE = "add_genres_table"
 REVISION = "heads"
-AUTOGENERATE = False
+AUTOGENERATE = True
 
 
 def generate_revision():

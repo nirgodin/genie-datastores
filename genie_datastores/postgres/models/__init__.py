@@ -14,6 +14,7 @@ from genie_datastores.postgres.models.orm.billboard.billboard_chart_entry import
 from genie_datastores.postgres.models.orm.billboard.billboard_track import BillboardTrack
 from genie_datastores.postgres.models.orm.chart_entry import ChartEntry
 from genie_datastores.postgres.models.orm.decision import Decision
+from genie_datastores.postgres.models.orm.genre import Genre
 from genie_datastores.postgres.models.orm.radio_track import RadioTrack
 from genie_datastores.postgres.models.orm.shazam.shazam_artist import ShazamArtist
 from genie_datastores.postgres.models.orm.shazam.shazam_top_track import ShazamTopTrack
@@ -59,6 +60,7 @@ __all__ = [
     "Artist",
     "ChartEntry",
     "Decision",
+    "Genre",
     "RadioTrack",
     "Track",
     "TrackLyrics",
