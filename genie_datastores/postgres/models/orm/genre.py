@@ -8,5 +8,3 @@ class Genre(BaseORMModel):
 
     id = Column(String, primary_key=True, nullable=False)
     primary_genre = Column(Enum(PrimaryGenre))
-
-    CheckConstraint("id ~ '^[a-z]+$'", name="check_id_lowercase")

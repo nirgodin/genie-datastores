@@ -28,11 +28,6 @@ def upgrade() -> None:
     sa.Column('primary_genre', ENUM('ELECTRONIC', 'HIP_HOP', 'INDIE', 'JAZZ', 'MIZRAHI', 'OTHER', 'POP', 'ROCK', 'SINGER_SONGWRITER', 'SOUL', name='primarygenre', create_type=False), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
-    op.execute(
-        sa.text(
-            "ALTER TABLE genres ADD constraint check_id_lowercase CHECK (id ~ '^[a-z]+$')"
-        )
-    )
 
     # ### end Alembic commands ###
 
