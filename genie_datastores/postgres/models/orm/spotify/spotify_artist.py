@@ -1,6 +1,7 @@
 from typing import List, Optional
 
-from sqlalchemy import Column, String, ARRAY
+from sqlalchemy import Column, String
+from sqlalchemy.dialects.postgresql import ARRAY
 
 from genie_datastores.postgres.consts.orm_consts import SPOTIFY_ARTISTS_TABLE, ID
 from genie_datastores.postgres.consts.spotify_consts import NAME, GENRES

@@ -1,4 +1,5 @@
-from sqlalchemy import Column, String, ForeignKey, ARRAY, SmallInteger, JSON, Enum
+from sqlalchemy import Column, String, ForeignKey, SmallInteger, JSON, Enum
+from sqlalchemy.dialects.postgresql import ARRAY
 
 from genie_datastores.postgres.consts.orm_consts import SPOTIFY_TRACKS_ID
 from genie_datastores.postgres.models.enum.data_source import DataSource

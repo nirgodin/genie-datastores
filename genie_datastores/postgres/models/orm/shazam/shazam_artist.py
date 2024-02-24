@@ -2,7 +2,8 @@ from datetime import datetime
 from typing import Optional, List
 
 from genie_common.utils import safe_nested_get, to_datetime
-from sqlalchemy import String, Column, ARRAY, TIMESTAMP
+from sqlalchemy import String, Column, TIMESTAMP
+from sqlalchemy.dialects.postgresql import ARRAY
 
 from genie_datastores.postgres.consts.datetime_consts import SHAZAM_DATETIME_FORMATS
 from genie_datastores.postgres.consts.orm_consts import SHAZAM_ARTISTS_TABLE

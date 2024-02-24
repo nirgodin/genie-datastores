@@ -1,7 +1,8 @@
 from typing import Optional
 
 from genie_common.utils import safe_nested_get
-from sqlalchemy import Column, String, ForeignKey, ARRAY
+from sqlalchemy import Column, String, ForeignKey
+from sqlalchemy.dialects.postgresql import ARRAY
 
 from genie_datastores.postgres.consts.audio_features_consts import KEY
 from genie_datastores.postgres.consts.orm_consts import SHAZAM_TRACKS_TABLE, SHAZAM_ARTIST_ID
