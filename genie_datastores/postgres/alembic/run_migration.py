@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "add_genres_table"
+MESSAGE = "add_evidence_and_origin_columns"
 REVISION = "heads"
 AUTOGENERATE = True
 

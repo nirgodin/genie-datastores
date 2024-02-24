@@ -13,3 +13,4 @@ class Decision(BaseORMModel):
     table = Column(Enum(Table), nullable=False)
     table_id = Column(String, nullable=False)
     confidence = Column(Float)
+    evidence = Column(String)
