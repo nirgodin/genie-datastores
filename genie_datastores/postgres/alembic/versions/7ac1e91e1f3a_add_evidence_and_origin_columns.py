@@ -24,7 +24,6 @@ def upgrade() -> None:
     op.add_column('artists', sa.Column('origin', sa.String(), nullable=True))
     op.drop_column('artists', 'primary_genre')
     op.add_column('decisions', sa.Column('evidence', sa.String(), nullable=True))
-    op.execute(sa.text(f"ALTER TYPE datasource ADD value '{DataSource.SPOTIFY.name}'"))
     # ### end Alembic commands ###
 
 

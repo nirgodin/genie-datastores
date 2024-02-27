@@ -9,10 +9,8 @@ import asyncio
 from typing import Sequence, Union
 
 import nest_asyncio
-from alembic import op
-import sqlalchemy as sa
+from genie_common.tools import ChunksGenerator
 from sqlalchemy import select
-from tools.data_chunks_generator import DataChunksGenerator
 from tqdm import tqdm
 
 from genie_datastores.postgres.models import TrackIDMapping, Artist, SpotifyArtist, SpotifyTrack, ShazamArtist, \
@@ -22,7 +20,7 @@ from genie_datastores.postgres.utils import update_by_mapping
 
 # revision identifiers, used by Alembic.
 revision: str = '676d91e955eb'
-down_revision: Union[str, None] = 'dd27cfbdbab4'
+down_revision: Union[str, None] = '0aaea7e78166'
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 
@@ -39,7 +37,7 @@ async def map_shazam_ids():
     )
     query_result = await execute_query(engine=engine, query=query)
     records = query_result.all()
-    chunks = list(DataChunksGenerator(max_chunks_number=None).generate_data_chunks(records, None))
+    chunks = list(ChunksGenerator(max_chunks_number=None).generate_data_chunks(records))
 
     with tqdm(total=len(chunks)) as progress_bar:
         for chunk in chunks:
