@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "add_evidence_and_origin_columns"
+MESSAGE = "add_cases_and_cases_progress_tables"
 REVISION = "heads"
 AUTOGENERATE = True
 

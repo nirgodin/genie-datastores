@@ -12,6 +12,8 @@ from genie_datastores.postgres.models.orm.artist import Artist
 from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 from genie_datastores.postgres.models.orm.billboard.billboard_chart_entry import BillboardChartEntry
 from genie_datastores.postgres.models.orm.billboard.billboard_track import BillboardTrack
+from genie_datastores.postgres.models.orm.cases.case import Case
+from genie_datastores.postgres.models.orm.cases.case_progress import CaseProgress
 from genie_datastores.postgres.models.orm.chart_entry import ChartEntry
 from genie_datastores.postgres.models.orm.decision import Decision
 from genie_datastores.postgres.models.orm.genre import Genre
@@ -64,4 +66,7 @@ __all__ = [
     "RadioTrack",
     "Track",
     "TrackLyrics",
+
+    "Case",
+    "CaseProgress"
 ]
