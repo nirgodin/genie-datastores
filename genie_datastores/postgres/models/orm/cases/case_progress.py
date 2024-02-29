@@ -12,3 +12,4 @@ class CaseProgress(BaseORMModel):
     has_exception = Column(Boolean, nullable=False, default=False)
     status = Column(String, nullable=False)
     time_took = Column(Float, nullable=False)
+    exception_details = Column(String)
