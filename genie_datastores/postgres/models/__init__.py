@@ -3,6 +3,7 @@ from genie_datastores.postgres.models.enum.billboard_chart import BillboardChart
 from genie_datastores.postgres.models.enum.chart import Chart
 from genie_datastores.postgres.models.enum.data_source import DataSource
 from genie_datastores.postgres.models.enum.gender import Gender
+from genie_datastores.postgres.models.enum.playlist_endpoint import PlaylistEndpoint
 from genie_datastores.postgres.models.enum.primary_genre import PrimaryGenre
 from genie_datastores.postgres.models.enum.shazam_location import ShazamLocation
 from genie_datastores.postgres.models.enum.spotify_album_type import SpotifyAlbumType
@@ -38,6 +39,7 @@ __all__ = [
     "Chart",
     "DataSource",
     "Gender",
+    "PlaylistEndpoint",
     "PrimaryGenre",
     "ShazamLocation",
     "SpotifyAlbumType",

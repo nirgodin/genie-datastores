@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "add_cases_and_cases_progress_tables"
+MESSAGE = "add_endpoint_column_to_cases"
 REVISION = "heads"
 AUTOGENERATE = True
 
