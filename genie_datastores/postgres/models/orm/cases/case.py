@@ -10,3 +10,4 @@ class Case(BaseORMModel):
 
     id = Column(String, primary_key=True, nullable=False)
     endpoint = Column(Enum(PlaylistEndpoint), nullable=False)
+    playlist_id = Column(String)

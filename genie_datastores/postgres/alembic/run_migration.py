@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "add_exception_details_column_to_cases_progress"
+MESSAGE = "add_playlist_id_column"
 REVISION = "heads"
 AUTOGENERATE = True
 
