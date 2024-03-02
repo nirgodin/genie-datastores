@@ -26,7 +26,7 @@ def upgrade() -> None:
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('column', sa.String(), nullable=False),
     sa.Column('source', ENUM('GENERAL_WIKIPEDIA', 'GENIUS', 'GOOGLE_IMAGES', 'ISRAELI_WIKIPEDIA', 'MANUAL_TAGGING', 'MUSIXMATCH', 'OPENAI', 'SHAZAM', 'SPOTIFY_EQUAL_PLAYLISTS', 'SPOTIFY_IMAGES', name='datasource', create_type=False), nullable=False),
-    sa.Column('table', ENUM('ARTISTS', 'TRACKS', 'TRACKS_LYRICS', name='table', create_type=False), nullable=False),
+    sa.Column('table', ENUM('ARTISTS', 'TRACKS', 'TRACKS_LYRICS', name='table', create_type=True), nullable=False),
     sa.Column('table_id', sa.String(), nullable=False),
     sa.Column('confidence', sa.Float(), nullable=True),
     sa.PrimaryKeyConstraint('id')
@@ -35,7 +35,7 @@ def upgrade() -> None:
     sa.Column('creation_date', sa.TIMESTAMP(), nullable=False),
     sa.Column('update_date', sa.TIMESTAMP(), nullable=False),
     sa.Column('id', sa.String(), nullable=False),
-    sa.Column('primary_genre', ENUM('ELECTRONIC', 'HIP_HOP', 'INDIE', 'JAZZ', 'MIZRAHI', 'OTHER', 'POP', 'ROCK', 'SINGER_SONGWRITER', 'SOUL', name='primarygenre', create_type=False), nullable=True),
+    sa.Column('primary_genre', ENUM('ELECTRONIC', 'HIP_HOP', 'INDIE', 'JAZZ', 'MIZRAHI', 'OTHER', 'POP', 'ROCK', 'SINGER_SONGWRITER', 'SOUL', name='primarygenre', create_type=True), nullable=True),
     sa.Column('is_cover', sa.Boolean(), nullable=True),
     sa.ForeignKeyConstraint(['id'], ['spotify_tracks.id'], ),
     sa.PrimaryKeyConstraint('id')

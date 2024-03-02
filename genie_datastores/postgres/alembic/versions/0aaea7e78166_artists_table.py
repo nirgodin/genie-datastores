@@ -28,7 +28,7 @@ def upgrade() -> None:
     sa.Column('shazam_id', sa.String(), nullable=True),
     sa.Column('birth_date', sa.TIMESTAMP(), nullable=True),
     sa.Column('death_date', sa.TIMESTAMP(), nullable=True),
-    sa.Column('gender', ENUM('MALE', 'FEMALE', 'BAND', 'UNKNOWN', name='gender', create_type=False), nullable=True),
+    sa.Column('gender', ENUM('MALE', 'FEMALE', 'BAND', 'UNKNOWN', name='gender', create_type=True), nullable=True),
     sa.Column('gender_source', ENUM('GENERAL_WIKIPEDIA', 'GENIUS', 'GOOGLE_IMAGES', 'ISRAELI_WIKIPEDIA', 'MANUAL_TAGGING', 'MUSIXMATCH', 'OPENAI', 'SHAZAM', 'SPOTIFY_EQUAL_PLAYLISTS', 'SPOTIFY_IMAGES', name='datasource', create_type=False), nullable=True),
     sa.Column('is_israeli', sa.Boolean(), nullable=True),
     sa.Column('is_lgbtq', sa.Boolean(), nullable=True),

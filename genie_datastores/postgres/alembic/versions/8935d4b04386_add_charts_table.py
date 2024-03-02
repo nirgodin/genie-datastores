@@ -25,7 +25,7 @@ def upgrade() -> None:
     sa.Column('update_date', sa.TIMESTAMP(), nullable=False),
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('track_id', sa.String(), nullable=False),
-    sa.Column('chart', ENUM('BILLBOARD_HOT_100', 'GALATZ_WEEKLY_ISRAELI', 'GLGLZ_WEEKLY_INTERNATIONAL', 'GLGLZ_WEEKLY_ISRAELI', 'KOL_ISRAEL_WEEKLY_INTERNATIONAL', 'KOL_ISRAEL_WEEKLY_ISRAELI', name='chart', create_type=False), nullable=False),
+    sa.Column('chart', ENUM('BILLBOARD_HOT_100', 'GALATZ_WEEKLY_ISRAELI', 'GLGLZ_WEEKLY_INTERNATIONAL', 'GLGLZ_WEEKLY_ISRAELI', 'KOL_ISRAEL_WEEKLY_INTERNATIONAL', 'KOL_ISRAEL_WEEKLY_ISRAELI', name='chart', create_type=True), nullable=False),
     sa.Column('date', sa.TIMESTAMP(), nullable=False),
     sa.Column('key', sa.String(), nullable=False),
     sa.Column('position', sa.SmallInteger(), nullable=False),
