@@ -5,7 +5,7 @@ from genie_common.utils import random_alphanumeric_string, random_enum_value, ra
     random_string_array
 
 from genie_datastores.postgres.models import Case, CaseProgress, PlaylistEndpoint, AudioFeatures, SpotifyTrack, \
-    TrackLyrics, DataSource, Artist, Gender
+    TrackLyrics, DataSource, Artist, Gender, SpotifyArtist
 
 
 class PostgresMockFactory:
@@ -57,6 +57,20 @@ class PostgresMockFactory:
             name=kwargs.get("name", random_alphanumeric_string()),
             number=kwargs.get("number", randint(1, 20)),
             release_date=kwargs.get("release_date", random_datetime()),
+        )
+
+    @staticmethod
+    def spotify_artist(**kwargs) -> SpotifyArtist:
+        return SpotifyArtist(
+            id=PostgresMockFactory._random_spotify_id(**kwargs),
+            name=kwargs.get("name", random_alphanumeric_string()),
+            about=kwargs.get("about", random_alphanumeric_string()),
+            facebook_name=kwargs.get("facebook_name", random_alphanumeric_string()),
+            genres=kwargs.get("genres", random_string_array()),
+            instagram_name=kwargs.get("instagram_name", random_alphanumeric_string()),
+            twitter_name=kwargs.get("twitter_name", random_alphanumeric_string()),
+            wikipedia_language=kwargs.get("wikipedia_language", random_alphanumeric_string(2)),
+            wikipedia_name=kwargs.get("wikipedia_name", random_alphanumeric_string()),
         )
 
     @staticmethod
