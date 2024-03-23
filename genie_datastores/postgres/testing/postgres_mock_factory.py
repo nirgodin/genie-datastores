@@ -5,7 +5,7 @@ from genie_common.utils import random_alphanumeric_string, random_enum_value, ra
     random_string_array
 
 from genie_datastores.postgres.models import Case, CaseProgress, PlaylistEndpoint, AudioFeatures, SpotifyTrack, \
-    TrackLyrics, DataSource, Artist, Gender, SpotifyArtist
+    TrackLyrics, DataSource, Artist, Gender, SpotifyArtist, RadioTrack, SpotifyStation, ShazamArtist
 
 
 class PostgresMockFactory:
@@ -20,7 +20,7 @@ class PostgresMockFactory:
     @staticmethod
     def case_progress(**kwargs) -> CaseProgress:
         return CaseProgress(
-            id=kwargs.get("id", randint(1, 1000)),
+            id=kwargs.get("id"),
             case_id=kwargs.get("case_id", random_alphanumeric_string()),
             has_exception=kwargs.get("has_exception", random_boolean()),
             status=kwargs.get("status", random_alphanumeric_string()),
@@ -108,6 +108,31 @@ class PostgresMockFactory:
             city=kwargs.get("city", random_alphanumeric_string()),
             latitude=kwargs.get("latitude", uniform(-90, 90)),
             longitude=kwargs.get("longitude", uniform(-180, 180)),
+        )
+
+    @staticmethod
+    def radio_track(**kwargs) -> RadioTrack:
+        return RadioTrack(
+            id=kwargs.get("id"),
+            track_id=PostgresMockFactory._random_spotify_id("track_id", **kwargs),
+            added_at=kwargs.get("added_at", random_datetime()),
+            artist_followers=kwargs.get("artist_followers", randint(0, 100000000)),
+            artist_popularity=PostgresMockFactory._random_confidence("artist_popularity", **kwargs),
+            popularity=PostgresMockFactory._random_confidence("popularity", **kwargs),
+            snapshot_id=kwargs.get("snapshot_id", random_alphanumeric_string(64)),
+            station=kwargs.get("station", random_enum_value(SpotifyStation))
+        )
+
+    @staticmethod
+    def shazam_artist(**kwargs) -> ShazamArtist:
+        return ShazamArtist(
+            id=PostgresMockFactory._random_shazam_id(key="id", **kwargs),
+            name=kwargs.get("name", random_alphanumeric_string()),
+            about=kwargs.get("about", random_alphanumeric_string()),
+            birth_date=kwargs.get("birth_date", random_datetime()),
+            genres=kwargs.get("genres", random_string_array()),
+            origin=kwargs.get("origin", random_alphanumeric_string()),
+            similar_artists=kwargs.get("similar_artists", random_string_array()),
         )
 
     @staticmethod
