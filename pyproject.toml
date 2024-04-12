@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.12"
-genie-common = { git = "https://github.com/nirgodin/genie-common.git", rev = "949398ba727d98caab4b8c9540e5cfbcc0978f30" }  # Must use long hash because poetry export runs into problem without
+genie-common = { git = "https://github.com/nirgodin/genie-common.git", rev = "d1c812930ad6c97dee0b8c00d1dd0de51cdf8262" }  # Must use long hash because poetry export runs into problem without
 sqlalchemy = { version = "<2.0.0", optional = true }
 asyncmy = { version = "0.2.8", optional = true }
 asyncpg = { version = "0.28.0", optional = true }
