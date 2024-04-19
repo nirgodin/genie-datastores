@@ -1,7 +1,7 @@
 import os
 from functools import lru_cache
 
-from aioredis import Redis
+from redis import Redis
 from typing import Optional
 
 

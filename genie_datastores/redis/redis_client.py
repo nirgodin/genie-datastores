@@ -2,7 +2,7 @@ from datetime import timedelta
 from functools import wraps
 from typing import Optional
 
-from aioredis import Redis
+from redis import Redis
 from genie_common.encoders import IEncoder
 from genie_common.tools import logger
 from genie_common.typing import AF
@@ -52,7 +52,7 @@ class RedisClient:
 
     @staticmethod
     async def _retrieve_from_cache(redis: Redis, cache_key: str, encoder: IEncoder) -> Optional[dict]:
-        cached_result = await redis.get(cache_key)
+        cached_result = redis.get(cache_key)
 
         if cached_result is None:
             logger.info(f"Did not find result in cache for cache key `{cache_key}`. Sending fetch request.")
@@ -71,7 +71,7 @@ class RedisClient:
                                      **kwargs) -> dict:
         result = await func(*args, **kwargs)
         encoded_result = encoder.encode(result)
-        await redis.setex(name=cache_key, time=ttl, value=encoded_result)
+        redis.setex(name=cache_key, time=ttl, value=encoded_result)
         logger.info(f"Successfully set cache for cache key `{cache_key}`.")
 
         return result
