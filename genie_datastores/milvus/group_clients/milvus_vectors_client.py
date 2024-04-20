@@ -12,18 +12,18 @@ class MilvusVectorsClient(BaseWebClient):
             COLLECTION_NAME: collection_name,
             DATA: records
         }
-        await self._post(route="/vector/insert", payload=payload)
+        await self._post(route="insert", payload=payload)
 
     async def query(self, request: QueryRequest):
         response = await self._post(
-            route="/vector/query",
+            route="query",
             payload=request.to_dict()
         )
         return response[DATA]
 
     async def search(self, request: SearchRequest):
         response = await self._post(
-            route="/vector/search",
+            route="search",
             payload=request.to_dict()
         )
         return response[DATA]
