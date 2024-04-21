@@ -592,8 +592,8 @@ clients = ["aiohttp (>=3.6.3,<3.9.0)"]
 [package.source]
 type = "git"
 url = "https://github.com/nirgodin/genie-common.git"
-reference = "1da9190dfdcd4526e36fe48c9b85c62e155c6da9"
-resolved_reference = "1da9190dfdcd4526e36fe48c9b85c62e155c6da9"
+reference = "9cea6997a0e271871cf971172a704f4eec2f230f"
+resolved_reference = "9cea6997a0e271871cf971172a704f4eec2f230f"
 
 [[package]]
 name = "google-api-core"
@@ -1775,4 +1775,4 @@ redis = ["redis"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.12"
-content-hash = "c743dba2fabd728042d9fcb2ecc5b1800108e6bb1d1eb1636d8ee8cb056d9c98"
+content-hash = "9357951aaadf8079cfc5240159e5d878a2e9dacad859512acc524f9b280924e0"
