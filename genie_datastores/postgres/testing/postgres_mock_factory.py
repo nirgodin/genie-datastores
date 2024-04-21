@@ -69,7 +69,7 @@ class PostgresMockFactory:
             genres=kwargs.get("genres", random_string_array()),
             instagram_name=kwargs.get("instagram_name", random_alphanumeric_string()),
             twitter_name=kwargs.get("twitter_name", random_alphanumeric_string()),
-            wikipedia_language=kwargs.get("wikipedia_language", random_alphanumeric_string(2)),
+            wikipedia_language=kwargs.get("wikipedia_language", random_alphanumeric_string(min_length=2, max_length=2)),
             wikipedia_name=kwargs.get("wikipedia_name", random_alphanumeric_string()),
         )
 
@@ -83,7 +83,7 @@ class PostgresMockFactory:
             id=PostgresMockFactory._random_spotify_id(**kwargs),
             lyrics=lyrics,
             lyrics_source=kwargs.get("lyrics_source", random_enum_value(DataSource)),
-            language=kwargs.get("language", random_alphanumeric_string(2)),
+            language=kwargs.get("language", random_alphanumeric_string(min_length=2, max_length=2)),
             language_confidence=PostgresMockFactory._random_confidence("language_confidence", **kwargs),
             number_of_words=kwargs.get("number_of_words", randint(0, 600)),
             words_count=dict(Counter(tokens))
@@ -119,7 +119,7 @@ class PostgresMockFactory:
             artist_followers=kwargs.get("artist_followers", randint(0, 100000000)),
             artist_popularity=PostgresMockFactory._random_confidence("artist_popularity", **kwargs),
             popularity=PostgresMockFactory._random_confidence("popularity", **kwargs),
-            snapshot_id=kwargs.get("snapshot_id", random_alphanumeric_string(64)),
+            snapshot_id=kwargs.get("snapshot_id", random_alphanumeric_string(min_length=64, max_length=64)),
             station=kwargs.get("station", random_enum_value(SpotifyStation))
         )
 
@@ -141,7 +141,7 @@ class PostgresMockFactory:
 
     @staticmethod
     def _random_spotify_id(key: str = "id", **kwargs) -> str:
-        return kwargs.get(key, random_alphanumeric_string(length=22))
+        return kwargs.get(key, random_alphanumeric_string(min_length=22, max_length=22))
 
     @staticmethod
     def _random_shazam_id(key: str = "id", **kwargs) -> str:
