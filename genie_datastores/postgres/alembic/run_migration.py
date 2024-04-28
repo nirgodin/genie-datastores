@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "add_playlist_id_column"
+MESSAGE = "add_key_chart_date_constraint"
 REVISION = "heads"
 AUTOGENERATE = True
 

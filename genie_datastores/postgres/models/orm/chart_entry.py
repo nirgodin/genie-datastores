@@ -19,4 +19,5 @@ class ChartEntry(BaseORMModel):
     track_id = Column(String, ForeignKey(SPOTIFY_TRACKS_ID))
 
     UniqueConstraint(track_id, chart, date)
+    UniqueConstraint(key, chart, date)
     CheckConstraint("key is not null or track_id is not null", name="check_track_id_and_key_are_not_both_null")
