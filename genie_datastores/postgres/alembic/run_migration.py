@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "add_key_chart_date_constraint"
+MESSAGE = "add_batch_id_column"
 REVISION = "heads"
 AUTOGENERATE = True
 
