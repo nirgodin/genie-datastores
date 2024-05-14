@@ -1,15 +1,15 @@
 from typing import List
 
 from genie_common.tools import logger
+from genie_common.utils import load_google_service_account_info
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build, Resource
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
 
-from genie_datastores.google.google_consts import PARENTS, FILES, ID
 from genie_datastores.google.drive.models.google_drive_download_metadata import GoogleDriveDownloadMetadata
 from genie_datastores.google.drive.models.google_drive_upload_metadata import GoogleDriveUploadMetadata
-from genie_datastores.google.google_utils import load_google_credentials
+from genie_datastores.google.google_consts import PARENTS, FILES, ID
 
 
 class GoogleDriveClient:
@@ -18,7 +18,7 @@ class GoogleDriveClient:
 
     @classmethod
     def create(cls) -> "GoogleDriveClient":
-        service_account_info = load_google_credentials()
+        service_account_info = load_google_service_account_info()
         credentials = Credentials.from_service_account_info(service_account_info)
         drive_service = build(
             serviceName='drive',

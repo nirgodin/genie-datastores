@@ -2,12 +2,12 @@ from typing import Optional, List, Union
 
 import gspread
 from genie_common.tools import logger
+from genie_common.utils import load_google_service_account_info
 from gspread import Client, Spreadsheet, Worksheet
 from gspread.exceptions import APIError
 from pandas import DataFrame
 
 from genie_datastores.google.sheets.models.share_settings import ShareSettings
-from genie_datastores.google.google_utils import load_google_credentials
 
 
 class GoogleSheetsClient:
@@ -16,7 +16,7 @@ class GoogleSheetsClient:
 
     @classmethod
     def create(cls) -> "GoogleSheetsClient":
-        credentials = load_google_credentials()
+        credentials = load_google_service_account_info()
         gspread_client = gspread.service_account_from_dict(credentials)
 
         return cls(gspread_client)
