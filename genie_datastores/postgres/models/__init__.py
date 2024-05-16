@@ -2,6 +2,7 @@ from genie_datastores.postgres.models.data_classes.chart_entry_data import Chart
 from genie_datastores.postgres.models.enum.billboard_chart import BillboardChart
 from genie_datastores.postgres.models.enum.chart import Chart
 from genie_datastores.postgres.models.enum.data_source import DataSource
+from genie_datastores.postgres.models.enum.entity_type import EntityType
 from genie_datastores.postgres.models.enum.gender import Gender
 from genie_datastores.postgres.models.enum.playlist_endpoint import PlaylistEndpoint
 from genie_datastores.postgres.models.enum.primary_genre import PrimaryGenre
@@ -29,6 +30,7 @@ from genie_datastores.postgres.models.orm.spotify.spotify_track import SpotifyTr
 from genie_datastores.postgres.models.orm.spotify.track_id_mapping import TrackIDMapping
 from genie_datastores.postgres.models.orm.track import Track
 from genie_datastores.postgres.models.orm.track_lyrics import TrackLyrics
+from genie_datastores.postgres.models.orm.translation import Translation
 
 __all__ = [
     # Dataclasses
@@ -38,6 +40,7 @@ __all__ = [
     "BillboardChart",
     "Chart",
     "DataSource",
+    "EntityType",
     "Gender",
     "PlaylistEndpoint",
     "PrimaryGenre",
@@ -68,6 +71,7 @@ __all__ = [
     "RadioTrack",
     "Track",
     "TrackLyrics",
+    "Translation",
 
     "Case",
     "CaseProgress"

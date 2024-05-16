@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "add_batch_id_column"
+MESSAGE = "add translations orm"
 REVISION = "heads"
 AUTOGENERATE = True
 
