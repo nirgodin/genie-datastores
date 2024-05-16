@@ -61,3 +61,15 @@ async def update_by_values(engine: AsyncEngine,
         query = query.where(condition)
 
     await execute_query(engine=engine, query=query)
+
+
+async def is_existing_value(engine: AsyncEngine, orm: Type[BaseORMModel], value: Any) -> bool:
+    query = (
+        select(orm)
+        .where(orm == value)
+        .limit(1)
+    )
+    query_result = await execute_query(engine=engine, query=query)
+    first_result = query_result.scalars().first()
+
+    return first_result is not None
