@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "add translations orm"
+MESSAGE = "add kz radio to spotify station enum"
 REVISION = "heads"
-AUTOGENERATE = True
+AUTOGENERATE = False
 
 
 def generate_revision():
