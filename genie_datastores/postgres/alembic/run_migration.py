@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "add kz radio to spotify station enum"
+MESSAGE = "translations entity columns nullable"
 REVISION = "heads"
-AUTOGENERATE = False
+AUTOGENERATE = True
 
 
 def generate_revision():
