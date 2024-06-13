@@ -2,11 +2,11 @@ from enum import Enum
 
 
 class SpotifyStation(Enum):
-    GLGLZ = '2SXRvfqiMBXFkaMi03npLZ'
-    KAN_88 = '5P6GKENoAibkFE4v1hjCUd'
-    ECO_99 = '7aB6UPU4A6Lkri1fDNtXhS'
-    KAN_GIMEL = '5v2ZRiBDwkLnR0pSkUdUW2'
-    FM_103 = '5QtSxwUC4f0tieGPseMRdA'
+    GLGLZ = '2KYmOoAcygHFPWmrSlGpHo'
+    KAN_88 = '07xAi6MxL60MOdoDwmAL4k'
+    ECO_99 = '1LgY4vKWZl3Uw2yWNd3GKX'
+    KAN_GIMEL = '3w2tquPLXoq6pEQUzLYG3J'
+    FM_103 = '4sTLFJN8Kv4R6zqKibmtFG'
     KZ_RADIO = '14dzmMSk7h9MxelRjwXZRj'
     SPOTIFY_TOP_50_WEEKLY = '37i9dQZEVXbJ5J1TrbkAF9'
     SPOTIFY_TOP_50_ISRAEL_DAILY = '37i9dQZEVXbJ6IpvItkve3'
