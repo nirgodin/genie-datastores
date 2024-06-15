@@ -1,11 +1,29 @@
 from collections import Counter
 from random import randint, uniform
 
-from genie_common.utils import random_alphanumeric_string, random_enum_value, random_boolean, random_datetime, \
+from genie_common.utils import (
+    random_alphanumeric_string,
+    random_enum_value,
+    random_boolean,
+    random_datetime,
     random_string_array
+)
 
-from genie_datastores.postgres.models import Case, CaseProgress, PlaylistEndpoint, AudioFeatures, SpotifyTrack, \
-    TrackLyrics, DataSource, Artist, Gender, SpotifyArtist, RadioTrack, SpotifyStation, ShazamArtist
+from genie_datastores.postgres.models import (
+    Case,
+    CaseProgress,
+    PlaylistEndpoint,
+    AudioFeatures,
+    SpotifyTrack,
+    TrackLyrics,
+    DataSource,
+    Artist,
+    Gender,
+    SpotifyArtist,
+    RadioTrack,
+    SpotifyStation,
+    ShazamArtist
+)
 
 
 class PostgresMockFactory:
