@@ -9,21 +9,7 @@ from genie_common.utils import (
     random_string_array
 )
 
-from genie_datastores.postgres.models import (
-    Case,
-    CaseProgress,
-    PlaylistEndpoint,
-    AudioFeatures,
-    SpotifyTrack,
-    TrackLyrics,
-    DataSource,
-    Artist,
-    Gender,
-    SpotifyArtist,
-    RadioTrack,
-    SpotifyStation,
-    ShazamArtist
-)
+from genie_datastores.postgres.models import *
 
 
 class PostgresMockFactory:
@@ -151,6 +137,18 @@ class PostgresMockFactory:
             genres=kwargs.get("genres", random_string_array()),
             origin=kwargs.get("origin", random_alphanumeric_string()),
             similar_artists=kwargs.get("similar_artists", random_string_array()),
+        )
+
+    @staticmethod
+    def translation(**kwargs) -> Translation:
+        return Translation(
+            text=kwargs.get("text", random_alphanumeric_string()),
+            translation=kwargs.get("translation", random_alphanumeric_string()),
+            source_language=kwargs.get("source_language", random_alphanumeric_string()),
+            target_language=kwargs.get("target_language", random_alphanumeric_string()),
+            entity_id=kwargs.get("entity_id", random_alphanumeric_string()),
+            entity_source=kwargs.get("entity_source", random_enum_value(DataSource)),
+            entity_type=kwargs.get("entity_source", random_enum_value(EntityType))
         )
 
     @staticmethod
