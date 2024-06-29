@@ -4,6 +4,8 @@ from genie_common.tools import logger
 from motor.motor_asyncio import AsyncIOMotorClient
 from testcontainers.mongodb import MongoDbContainer
 
+from genie_datastores.mongo.operations import get_motor_client
+
 
 class MongoTestkit:
     def __init__(self,
@@ -15,8 +17,8 @@ class MongoTestkit:
         self._container = container
 
     def get_motor_client(self) -> AsyncIOMotorClient:
-        url = self._container.get_connection_url()
-        return AsyncIOMotorClient(url)
+        uri = self._container.get_connection_url()
+        return get_motor_client(uri)
 
     def __enter__(self) -> "MongoTestkit":
         if self._container is None:
