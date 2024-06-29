@@ -649,8 +649,8 @@ clients = ["aiohttp (>=3.6.3,<3.9.0)", "google-cloud-translate (>=3.15.3,<3.16)"
 [package.source]
 type = "git"
 url = "https://github.com/nirgodin/genie-common.git"
-reference = "14ceb750bf107bc323b2bddd65148e7c4eb8ae54"
-resolved_reference = "14ceb750bf107bc323b2bddd65148e7c4eb8ae54"
+reference = "4cc296b74b266d66a342c4a08e0d4b91595a1d25"
+resolved_reference = "4cc296b74b266d66a342c4a08e0d4b91595a1d25"
 
 [[package]]
 name = "google-api-core"
@@ -2317,4 +2317,4 @@ redis = ["redis"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.12"
-content-hash = "6c8a228da9508cd5e7d9a6d7b8b96822c30aec61aebf9a634daeed5504bd8789"
+content-hash = "6f56dbec5d616f26fe02dbe37dfb58b31a8b665d38cc34c8aac86536d48a9b43"
