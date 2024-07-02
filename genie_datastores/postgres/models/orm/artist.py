@@ -11,6 +11,7 @@ class Artist(BaseORMModel):
 
     id = Column(String, ForeignKey(SPOTIFY_ARTISTS_ID), primary_key=True, nullable=False)
     shazam_id = Column(String, ForeignKey(SHAZAM_ARTIST_ID))
+    genius_id = Column(String)
     birth_date = Column(TIMESTAMP)
     death_date = Column(TIMESTAMP)
     birth_date_source = Column(Enum(DataSource))

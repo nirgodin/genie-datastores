@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "translations entity columns nullable"
+MESSAGE = "Add genius artist id column"
 REVISION = "heads"
 AUTOGENERATE = True
 
