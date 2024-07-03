@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "Add genius artist id column"
+MESSAGE = "Add genius artists table"
 REVISION = "heads"
 AUTOGENERATE = True
 

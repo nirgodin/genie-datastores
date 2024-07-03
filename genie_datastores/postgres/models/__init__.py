@@ -18,6 +18,7 @@ from genie_datastores.postgres.models.orm.cases.case import Case
 from genie_datastores.postgres.models.orm.cases.case_progress import CaseProgress
 from genie_datastores.postgres.models.orm.chart_entry import ChartEntry
 from genie_datastores.postgres.models.orm.decision import Decision
+from genie_datastores.postgres.models.orm.genius.genius_artist import GeniusArtist
 from genie_datastores.postgres.models.orm.genre import Genre
 from genie_datastores.postgres.models.orm.radio_track import RadioTrack
 from genie_datastores.postgres.models.orm.shazam.shazam_artist import ShazamArtist
@@ -63,6 +64,8 @@ __all__ = [
     "SpotifyArtist",
     "SpotifyTrack",
     "TrackIDMapping",
+
+    "GeniusArtist",
 
     "Artist",
     "ChartEntry",
