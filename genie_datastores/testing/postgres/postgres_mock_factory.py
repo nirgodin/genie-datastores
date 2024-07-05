@@ -10,6 +10,7 @@ from genie_common.utils import (
 )
 
 from genie_datastores.postgres.models import *
+from genie_datastores.models import DataSource, EntityType
 
 
 class PostgresMockFactory:

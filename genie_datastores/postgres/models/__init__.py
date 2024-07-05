@@ -1,8 +1,6 @@
 from genie_datastores.postgres.models.data_classes.chart_entry_data import ChartEntryData
 from genie_datastores.postgres.models.enum.billboard_chart import BillboardChart
 from genie_datastores.postgres.models.enum.chart import Chart
-from genie_datastores.postgres.models.enum.data_source import DataSource
-from genie_datastores.postgres.models.enum.entity_type import EntityType
 from genie_datastores.postgres.models.enum.gender import Gender
 from genie_datastores.postgres.models.enum.playlist_endpoint import PlaylistEndpoint
 from genie_datastores.postgres.models.enum.primary_genre import PrimaryGenre
@@ -40,8 +38,6 @@ __all__ = [
     # Enum
     "BillboardChart",
     "Chart",
-    "DataSource",
-    "EntityType",
     "Gender",
     "PlaylistEndpoint",
     "PrimaryGenre",

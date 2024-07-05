@@ -11,8 +11,6 @@ from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
-from genie_datastores.postgres.models import DataSource
-
 # revision identifiers, used by Alembic.
 revision: str = '5b23c3100284'
 down_revision: Union[str, None] = '9316e1f16bcc'

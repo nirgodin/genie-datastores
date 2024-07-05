@@ -3,7 +3,7 @@ from sqlalchemy import Column, String, ForeignKey, TIMESTAMP, Boolean, Float, En
 from genie_datastores.postgres.consts.orm_consts import SPOTIFY_ARTISTS_ID, SHAZAM_ARTIST_ID
 from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 from genie_datastores.postgres.models.enum.gender import Gender
-from genie_datastores.postgres.models.enum.data_source import DataSource
+from genie_datastores.models import DataSource
 
 
 class Artist(BaseORMModel):

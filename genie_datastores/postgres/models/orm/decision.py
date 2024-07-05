@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, Enum, Float, String
 
-from genie_datastores.postgres.models import BaseORMModel, DataSource
+from genie_datastores.postgres.models import BaseORMModel
+from genie_datastores.models import DataSource
 from genie_datastores.postgres.models.enum.table import Table
 
 

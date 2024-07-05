@@ -1,6 +1,7 @@
 from sqlalchemy import Column, String, Enum, Integer
 
-from genie_datastores.postgres.models import BaseORMModel, DataSource, EntityType
+from genie_datastores.postgres.models import BaseORMModel
+from genie_datastores.models import DataSource, EntityType
 
 
 class Translation(BaseORMModel):

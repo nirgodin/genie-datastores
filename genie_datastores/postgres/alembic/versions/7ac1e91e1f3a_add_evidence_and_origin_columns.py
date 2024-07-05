@@ -10,8 +10,6 @@ from typing import Sequence, Union
 from alembic import op
 import sqlalchemy as sa
 
-from genie_datastores.postgres.models import DataSource
-
 # revision identifiers, used by Alembic.
 revision: str = '7ac1e91e1f3a'
 down_revision: Union[str, None] = '88c5d940ef41'
