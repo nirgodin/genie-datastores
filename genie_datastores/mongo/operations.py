@@ -19,7 +19,7 @@ def get_motor_client(uri: Optional[str] = None) -> AsyncIOMotorClient:
     return AsyncIOMotorClient(mongo_uri)
 
 
-async def initialize(motor_client: Optional[AsyncIOMotorClient] = None) -> None:
+async def initialize_mongo(motor_client: Optional[AsyncIOMotorClient] = None) -> None:
     client = motor_client or get_motor_client()
     models = BaseDocument.__subclasses__()
 
