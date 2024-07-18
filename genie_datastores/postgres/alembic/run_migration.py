@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "Add genius artists table"
+MESSAGE = "Make has_about_document not nullable"
 REVISION = "heads"
 AUTOGENERATE = True
 
