@@ -14,7 +14,6 @@ class SpotifyArtist(BaseSpotifyORMModel):
     id = Column(String, primary_key=True, nullable=False)
     name = Column(String, nullable=False)
     has_about_document = Column(Boolean, nullable=False, default=False)
-    about = Column(String)
     facebook_name = Column(String)
     genres = Column(ARRAY(String))
     instagram_name = Column(String)

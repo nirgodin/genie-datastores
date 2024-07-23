@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "Make has_about_document not nullable"
+MESSAGE = "Remove spotify_artists about column"
 REVISION = "heads"
 AUTOGENERATE = True
 
