@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Optional, List
 
 from genie_common.utils import safe_nested_get, to_datetime
-from sqlalchemy import String, Column, TIMESTAMP
+from sqlalchemy import String, Column, TIMESTAMP, Boolean
 from sqlalchemy.dialects.postgresql import ARRAY
 
 from genie_datastores.postgres.consts.datetime_consts import SHAZAM_DATETIME_FORMATS
@@ -18,6 +18,7 @@ class ShazamArtist(BaseORMModel):
 
     id = Column(String, primary_key=True, nullable=False)
     name = Column(String, nullable=False)
+    has_about_document = Column(Boolean, nullable=False, default=False)
     about = Column(String)
     birth_date = Column(TIMESTAMP)
     genres = Column(ARRAY(String))
