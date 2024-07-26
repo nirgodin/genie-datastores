@@ -7,7 +7,7 @@ from sqlalchemy.dialects.postgresql import ARRAY
 
 from genie_datastores.postgres.consts.datetime_consts import SHAZAM_DATETIME_FORMATS
 from genie_datastores.postgres.consts.orm_consts import SHAZAM_ARTISTS_TABLE
-from genie_datastores.postgres.consts.shazam_consts import ATTRIBUTES, ARTIST_BIO, GENRE_NAMES, ORIGIN, DATA, \
+from genie_datastores.postgres.consts.shazam_consts import ATTRIBUTES, GENRE_NAMES, ORIGIN, DATA, \
     BORN_OR_FORMED, VIEWS, SIMILAR_ARTISTS
 from genie_datastores.postgres.consts.spotify_consts import ID, NAME
 from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
@@ -19,7 +19,6 @@ class ShazamArtist(BaseORMModel):
     id = Column(String, primary_key=True, nullable=False)
     name = Column(String, nullable=False)
     has_about_document = Column(Boolean, nullable=False, default=False)
-    about = Column(String)
     birth_date = Column(TIMESTAMP)
     genres = Column(ARRAY(String))
     origin = Column(String)
@@ -32,7 +31,6 @@ class ShazamArtist(BaseORMModel):
             return cls(
                 id=artist[ID],
                 name=safe_nested_get(artist, [ATTRIBUTES, NAME]),
-                about=safe_nested_get(artist, [ATTRIBUTES, ARTIST_BIO]),
                 birth_date=cls._extract_birth_date(artist),
                 genres=safe_nested_get(artist, [ATTRIBUTES, GENRE_NAMES]),
                 origin=safe_nested_get(artist, [ATTRIBUTES, ORIGIN]),

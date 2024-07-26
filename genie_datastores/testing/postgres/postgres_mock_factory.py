@@ -69,7 +69,6 @@ class PostgresMockFactory:
         return SpotifyArtist(
             id=PostgresMockFactory._random_spotify_id(**kwargs),
             name=kwargs.get("name", random_alphanumeric_string()),
-            about=kwargs.get("about", random_alphanumeric_string()),
             facebook_name=kwargs.get("facebook_name", random_alphanumeric_string()),
             genres=kwargs.get("genres", random_string_array()),
             instagram_name=kwargs.get("instagram_name", random_alphanumeric_string()),
@@ -133,7 +132,6 @@ class PostgresMockFactory:
         return ShazamArtist(
             id=PostgresMockFactory._random_shazam_id(key="id", **kwargs),
             name=kwargs.get("name", random_alphanumeric_string()),
-            about=kwargs.get("about", random_alphanumeric_string()),
             birth_date=kwargs.get("birth_date", random_datetime()),
             genres=kwargs.get("genres", random_string_array()),
             origin=kwargs.get("origin", random_alphanumeric_string()),
