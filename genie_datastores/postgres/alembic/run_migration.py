@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "Remove shazam_artists about column"
+MESSAGE = "Add Wikipedia data source"
 REVISION = "heads"
 AUTOGENERATE = True
 
