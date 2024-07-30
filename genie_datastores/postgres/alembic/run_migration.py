@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "Add Wikipedia data source"
+MESSAGE = "Add merge playlists endpoint"
 REVISION = "heads"
-AUTOGENERATE = True
+AUTOGENERATE = False
 
 
 def generate_revision():
