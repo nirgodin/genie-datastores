@@ -1,5 +1,6 @@
-from typing import Optional
+from typing import Optional, Any
 
+from genie_common.tools import logger
 from sqlalchemy import Column, String, ForeignKey, SmallInteger, Integer, Boolean, Float
 
 from genie_datastores.postgres.consts.audio_features_consts import ACOUSTICNESS, DANCEABILITY, DURATION_MS, ENERGY, \
@@ -28,7 +29,11 @@ class AudioFeatures(BaseSpotifyORMModel):
     valence = Column(SmallInteger)
 
     @classmethod
-    def from_spotify_response(cls, response: dict) -> "AudioFeatures":
+    def from_spotify_response(cls, response: dict) -> Optional["AudioFeatures"]:
+        if not cls._is_valid_response(response):
+            logger.warning("Received invalid audio features response from Spotify. Returning None")
+            return None
+
         return cls(
             id=response[ID],
             acousticness=cls._safe_multiply_round(response[ACOUSTICNESS]),
@@ -45,6 +50,13 @@ class AudioFeatures(BaseSpotifyORMModel):
             time_signature=response[TIME_SIGNATURE],
             valence=cls._safe_multiply_round(response[VALENCE])
         )
+
+    @staticmethod
+    def _is_valid_response(response: Any) -> bool:
+        if isinstance(response, dict):
+            return ID in response.keys()
+
+        return False
 
     @staticmethod
     def _safe_multiply_round(value: Optional[float]) -> Optional[int]:
