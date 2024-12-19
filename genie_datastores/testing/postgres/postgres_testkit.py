@@ -23,10 +23,12 @@ class PostgresTestkit:
         self._container = container
 
     def get_database_engine(self, driver: str = "asyncpg") -> AsyncEngine:
-        raw_url = self._container.get_connection_url()
-        url = raw_url.replace("psycopg2", driver)
-
+        url = self.get_database_url(driver)
         return create_async_engine(url=url, poolclass=NullPool)
+
+    def get_database_url(self, driver: str = "asyncpg") -> str:
+        raw_url = self._container.get_connection_url()
+        return raw_url.replace("psycopg2", driver)
 
     def __enter__(self) -> "PostgresTestkit":
         if self._container is None:

@@ -1,6 +1,6 @@
 import os
 from functools import lru_cache
-from typing import List, Union
+from typing import List, Union, Optional
 
 import pandas as pd
 from genie_common.tools import logger
@@ -60,8 +60,8 @@ def get_database_url() -> str:
 
 
 @lru_cache
-def get_database_engine() -> AsyncEngine:
-    return create_async_engine(get_database_url())
+def get_database_engine(url: Optional[str] = None) -> AsyncEngine:
+    return create_async_engine(url or get_database_url())
 
 
 async def read_sql(engine: AsyncEngine, query: Union[Select, TextClause]) -> DataFrame:
