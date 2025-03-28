@@ -18,7 +18,7 @@ class SpotifyFeaturedArtist(BaseSpotifyORMModel):
     @classmethod
     def from_spotify_response(cls, response: dict) -> "SpotifyFeaturedArtist":
         return cls(
-            track_id=response[ID],
-            artist_id=response["artist_id"],
+            track_id=response["track_id"],
+            artist_id=response[ID],
             position=response["position"],
         )
