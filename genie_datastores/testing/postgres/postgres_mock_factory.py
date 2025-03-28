@@ -11,6 +11,7 @@ from genie_common.utils import (
 
 from genie_datastores.postgres.models import *
 from genie_datastores.models import DataSource, EntityType
+from genie_datastores.postgres.models.orm.spotify.spotify_featured_artist import SpotifyFeaturedArtist
 
 
 class PostgresMockFactory:
@@ -148,6 +149,15 @@ class PostgresMockFactory:
             entity_id=kwargs.get("entity_id", random_alphanumeric_string()),
             entity_source=kwargs.get("entity_source", random_enum_value(DataSource)),
             entity_type=kwargs.get("entity_source", random_enum_value(EntityType))
+        )
+
+    @staticmethod
+    def spotify_featured_artist(**kwargs) -> SpotifyFeaturedArtist:
+        return SpotifyFeaturedArtist(
+            id=kwargs.get("id"),
+            track_id=PostgresMockFactory._random_spotify_id("track_id", **kwargs),
+            artist_id=PostgresMockFactory._random_spotify_id("artist_id", **kwargs),
+            position=kwargs.get("position", randint(1, 5)),
         )
 
     @staticmethod

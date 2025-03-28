@@ -25,6 +25,7 @@ from genie_datastores.postgres.models.orm.shazam.shazam_track import ShazamTrack
 from genie_datastores.postgres.models.orm.spotify.audio_features import AudioFeatures
 from genie_datastores.postgres.models.orm.spotify.spotify_album import SpotifyAlbum
 from genie_datastores.postgres.models.orm.spotify.spotify_artist import SpotifyArtist
+from genie_datastores.postgres.models.orm.spotify.spotify_featured_artist import SpotifyFeaturedArtist
 from genie_datastores.postgres.models.orm.spotify.spotify_track import SpotifyTrack
 from genie_datastores.postgres.models.orm.spotify.track_id_mapping import TrackIDMapping
 from genie_datastores.postgres.models.orm.track import Track
@@ -58,6 +59,7 @@ __all__ = [
     "AudioFeatures",
     "SpotifyAlbum",
     "SpotifyArtist",
+    "SpotifyFeaturedArtist",
     "SpotifyTrack",
     "TrackIDMapping",
 
