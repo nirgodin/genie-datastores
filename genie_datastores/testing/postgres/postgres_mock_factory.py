@@ -161,6 +161,19 @@ class PostgresMockFactory:
         )
 
     @staticmethod
+    def chart_entry(**kwargs) -> SpotifyFeaturedArtist:
+        return ChartEntry(
+            id=kwargs.get("id"),
+            chart=kwargs.get("chart", random_enum_value(Chart)),
+            date=kwargs.get("date", random_datetime()),
+            position=kwargs.get("position", randint(1, 100)),
+            comment=kwargs.get("comment", random_alphanumeric_string()),
+            entry_metadata=kwargs.get("entry_metadata"),
+            key=kwargs.get("key", random_alphanumeric_string()),
+            track_id=PostgresMockFactory._random_spotify_id("track_id", **kwargs),
+        )
+
+    @staticmethod
     def _random_confidence(key: str, **kwargs) -> int:
         return kwargs.get(key, randint(0, 100))
 
