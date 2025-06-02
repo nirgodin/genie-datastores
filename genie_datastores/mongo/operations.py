@@ -23,4 +23,4 @@ async def initialize_mongo(motor_client: Optional[AsyncIOMotorClient] = None) ->
     client = motor_client or get_motor_client()
     models = BaseDocument.__subclasses__()
 
-    await init_beanie(database=client.genie, document_models=models)
+    await init_beanie(database=client.genie, document_models=models, multiprocessing_mode=True)
