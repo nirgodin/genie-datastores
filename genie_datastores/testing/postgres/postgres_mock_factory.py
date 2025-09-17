@@ -174,6 +174,17 @@ class PostgresMockFactory:
         )
 
     @staticmethod
+    def genius_artist(**kwargs) -> GeniusArtist:
+        return GeniusArtist(
+            id=kwargs.get("id", PostgresMockFactory._random_genius_id()),
+            name=kwargs.get("name", random_alphanumeric_string()),
+            alternate_names=kwargs.get("alternate_names", random_string_array()),
+            facebook_name=kwargs.get("facebook_name", random_alphanumeric_string()),
+            instagram_name=kwargs.get("instagram_name", random_alphanumeric_string()),
+            twitter_name=kwargs.get("twitter_name", random_alphanumeric_string()),
+        )
+
+    @staticmethod
     def _random_confidence(key: str, **kwargs) -> int:
         return kwargs.get(key, randint(0, 100))
 
@@ -184,3 +195,7 @@ class PostgresMockFactory:
     @staticmethod
     def _random_shazam_id(key: str = "id", **kwargs) -> str:
         return kwargs.get(key, str(randint(10000, 2000000000)))
+
+    @staticmethod
+    def _random_genius_id() -> str:
+        return str(randint(1, 100000))
