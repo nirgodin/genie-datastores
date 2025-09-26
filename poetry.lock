@@ -357,42 +357,6 @@ queue = ["beanie-batteries-queue (>=0.2)"]
 test = ["asgi-lifespan (>=1.0.1)", "dnspython (>=2.1.0)", "fastapi (>=0.100)", "flake8 (>=3)", "httpx (>=0.23.0)", "pre-commit (>=2.3.0)", "pydantic-extra-types (>=2)", "pydantic-settings (>=2)", "pydantic[email]", "pyright (>=0)", "pytest (>=6.0.0)", "pytest-asyncio (>=0.21.0)", "pytest-cov (>=2.8.1)"]
 
 [[package]]
-name = "beautifulsoup4"
-version = "4.13.4"
-description = "Screen-scraping library"
-optional = true
-python-versions = ">=3.7.0"
-files = [
-    {file = "beautifulsoup4-4.13.4-py3-none-any.whl", hash = "sha256:9bbbb14bfde9d79f38b8cd5f8c7c85f4b8f2523190ebed90e950a8dea4cb1c4b"},
-    {file = "beautifulsoup4-4.13.4.tar.gz", hash = "sha256:dbb3c4e1ceae6aefebdaf2423247260cd062430a410e38c66f2baa50a8437195"},
-]
-
-[package.dependencies]
-soupsieve = ">1.2"
-typing-extensions = ">=4.0.0"
-
-[package.extras]
-cchardet = ["cchardet"]
-chardet = ["chardet"]
-charset-normalizer = ["charset-normalizer"]
-html5lib = ["html5lib"]
-lxml = ["lxml"]
-
-[[package]]
-name = "billboard-py"
-version = "7.1.0"
-description = "Python API for downloading Billboard charts"
-optional = true
-python-versions = "*"
-files = [
-    {file = "billboard.py-7.1.0-py2.py3-none-any.whl", hash = "sha256:e15b6898fe8c1447d753853456929495b46082188016d38f75b7cb673ba76624"},
-]
-
-[package.dependencies]
-beautifulsoup4 = ">=4.4.1"
-requests = ">=2.2.1"
-
-[[package]]
 name = "cachetools"
 version = "5.5.2"
 description = "Extensible memoizing collections and decorators"
@@ -2283,17 +2247,6 @@ files = [
 ]
 
 [[package]]
-name = "soupsieve"
-version = "2.7"
-description = "A modern CSS selector implementation for Beautiful Soup."
-optional = true
-python-versions = ">=3.8"
-files = [
-    {file = "soupsieve-2.7-py3-none-any.whl", hash = "sha256:6e60cc5c1ffaf1cebcc12e8188320b72071e922c2e897f737cadce79ad5d30c4"},
-    {file = "soupsieve-2.7.tar.gz", hash = "sha256:ad282f9b6926286d2ead4750552c8a6142bc4c783fd66b0293547c8fe6ae126a"},
-]
-
-[[package]]
 name = "sqlalchemy"
 version = "1.4.54"
 description = "Database Abstraction Library"
@@ -2856,7 +2809,7 @@ milvus = ["dataclasses-json"]
 milvus-testing = ["pymilvus"]
 mongo = ["beanie"]
 mongo-testing = ["beanie", "testcontainers", "testcontainers-mongodb"]
-postgres = ["asyncmy", "asyncpg", "billboard-py", "greenlet", "pandas", "sqlalchemy"]
+postgres = ["asyncmy", "asyncpg", "greenlet", "pandas", "sqlalchemy"]
 postgres-testing = ["asyncmy", "asyncpg", "greenlet", "sqlalchemy", "testcontainers", "testcontainers-postgres"]
 redis = ["redis"]
 redis-testing = ["redis", "testcontainers"]
@@ -2864,4 +2817,4 @@ redis-testing = ["redis", "testcontainers"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.12"
-content-hash = "0f34ae7681124e51073fa90715719cdf3a83423f00dfe417b309c5fd8de138fe"
+content-hash = "651cca686552ba9c8c8987078a3191082081a95384598016a2e1681e46c5e249"

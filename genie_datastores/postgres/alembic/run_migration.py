@@ -1,8 +1,8 @@
 import subprocess
 
-MESSAGE = "Add merge playlists endpoint"
+MESSAGE = "Remove legacy billboard tables"
 REVISION = "heads"
-AUTOGENERATE = False
+AUTOGENERATE = True
 
 
 def generate_revision():

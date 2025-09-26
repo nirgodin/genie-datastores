@@ -1,5 +1,3 @@
-from genie_datastores.postgres.models.data_classes.chart_entry_data import ChartEntryData
-from genie_datastores.postgres.models.enum.billboard_chart import BillboardChart
 from genie_datastores.postgres.models.enum.chart import Chart
 from genie_datastores.postgres.models.enum.gender import Gender
 from genie_datastores.postgres.models.enum.playlist_endpoint import PlaylistEndpoint
@@ -10,8 +8,6 @@ from genie_datastores.postgres.models.enum.spotify_station import SpotifyStation
 from genie_datastores.postgres.models.enum.table import Table
 from genie_datastores.postgres.models.orm.artist import Artist
 from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
-from genie_datastores.postgres.models.orm.billboard.billboard_chart_entry import BillboardChartEntry
-from genie_datastores.postgres.models.orm.billboard.billboard_track import BillboardTrack
 from genie_datastores.postgres.models.orm.cases.case import Case
 from genie_datastores.postgres.models.orm.cases.case_progress import CaseProgress
 from genie_datastores.postgres.models.orm.chart_entry import ChartEntry
@@ -33,11 +29,7 @@ from genie_datastores.postgres.models.orm.track_lyrics import TrackLyrics
 from genie_datastores.postgres.models.orm.translation import Translation
 
 __all__ = [
-    # Dataclasses
-    "ChartEntryData",
-
     # Enum
-    "BillboardChart",
     "Chart",
     "Gender",
     "PlaylistEndpoint",
@@ -49,8 +41,6 @@ __all__ = [
 
     # ORM
     "BaseORMModel",
-    "BillboardChartEntry",
-    "BillboardTrack",
 
     "ShazamArtist",
     "ShazamTopTrack",
