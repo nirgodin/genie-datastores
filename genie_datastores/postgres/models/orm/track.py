@@ -12,7 +12,3 @@ class Track(BaseORMModel):
     is_cover = Column(Boolean, nullable=False, default=False)
     primary_genre = Column(Enum(PrimaryGenre))
     batch_id = Column(String)
-
-    @classmethod
-    def from_id(cls, id_: str) -> "Track":
-        return cls(id=id_)

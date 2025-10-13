@@ -1,14 +1,11 @@
-from typing import List, Optional
-
 from sqlalchemy import Column, String, Boolean
 from sqlalchemy.dialects.postgresql import ARRAY
 
-from genie_datastores.postgres.consts.orm_consts import SPOTIFY_ARTISTS_TABLE, ID
-from genie_datastores.postgres.consts.spotify_consts import NAME, GENRES
-from genie_datastores.postgres.models.orm.spotify.base_spotify_orm_model import BaseSpotifyORMModel
+from genie_datastores.postgres.consts.orm_consts import SPOTIFY_ARTISTS_TABLE
+from genie_datastores.postgres.models import BaseORMModel
 
 
-class SpotifyArtist(BaseSpotifyORMModel):
+class SpotifyArtist(BaseORMModel):
     __tablename__ = SPOTIFY_ARTISTS_TABLE
 
     id = Column(String, primary_key=True, nullable=False)
@@ -20,16 +17,3 @@ class SpotifyArtist(BaseSpotifyORMModel):
     twitter_name = Column(String)
     wikipedia_language = Column(String)
     wikipedia_name = Column(String)
-
-    @classmethod
-    def from_spotify_response(cls, response: dict) -> "SpotifyArtist":
-        return cls(
-            id=response[ID],
-            name=response[NAME],
-            genres=cls._extract_genres(response)
-        )
-
-    @staticmethod
-    def _extract_genres(response: dict) -> Optional[List[str]]:
-        genres = response.get(GENRES)
-        return genres if genres else None
