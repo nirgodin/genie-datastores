@@ -11,6 +11,9 @@ from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 from genie_datastores.postgres.models.orm.cases.case import Case
 from genie_datastores.postgres.models.orm.cases.case_progress import CaseProgress
 from genie_datastores.postgres.models.orm.chart_entry import ChartEntry
+from genie_datastores.postgres.models.orm.curators.curated_track import CuratedTrack
+from genie_datastores.postgres.models.orm.curators.curator import Curator
+from genie_datastores.postgres.models.orm.curators.curator_collection import CuratorCollection
 from genie_datastores.postgres.models.orm.decision import Decision
 from genie_datastores.postgres.models.orm.genius.genius_artist import GeniusArtist
 from genie_datastores.postgres.models.orm.genre import Genre
@@ -65,5 +68,9 @@ __all__ = [
     "Translation",
 
     "Case",
-    "CaseProgress"
+    "CaseProgress",
+
+    "CuratedTrack",
+    "CuratorCollection",
+    "Curator",
 ]

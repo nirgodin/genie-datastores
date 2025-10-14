@@ -6,6 +6,7 @@ class DataSource(Enum):
     GENIUS = "genius"
     GOOGLE_IMAGES = "google_images"
     ISRAELI_WIKIPEDIA = "israeli_wikipedia"
+    JOSIE = "josie"
     MANUAL_TAGGING = "manual_tagging"
     MUSIXMATCH = "musixmatch"
     OPENAI = "openai"
