@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "Remove legacy billboard tables"
+MESSAGE = "Add curation tables"
 REVISION = "heads"
 AUTOGENERATE = True
 
