@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "Add curation tables"
+MESSAGE = "Add comment column to curation tables"
 REVISION = "heads"
 AUTOGENERATE = True
 

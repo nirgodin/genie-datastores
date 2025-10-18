@@ -11,3 +11,4 @@ class CuratorCollection(BaseORMModel):
     curator_id = Column(String, ForeignKey(CURATORS_TABLE_ID), nullable=False)
     title = Column(String)
     description = Column(String)
+    comment = Column(String)
