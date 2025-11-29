@@ -1,9 +1,8 @@
 from sqlalchemy import Column, String, ForeignKey, TIMESTAMP, Boolean, Float, Enum
 
 from genie_datastores.postgres.consts.orm_consts import SPOTIFY_ARTISTS_ID, SHAZAM_ARTIST_ID
-from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 from genie_datastores.postgres.models.enum.gender import Gender
-from genie_datastores.models import DataSource
+from genie_datastores.postgres.models.orm.base_orm_model import BaseORMModel
 
 
 class Artist(BaseORMModel):
@@ -14,9 +13,7 @@ class Artist(BaseORMModel):
     genius_id = Column(String)
     birth_date = Column(TIMESTAMP)
     death_date = Column(TIMESTAMP)
-    birth_date_source = Column(Enum(DataSource))
     gender = Column(Enum(Gender))
-    gender_source = Column(Enum(DataSource))
     is_israeli = Column(Boolean)
     is_lgbtq = Column(Boolean)
     origin = Column(String)

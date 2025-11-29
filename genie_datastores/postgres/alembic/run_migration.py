@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "Add comment column to curation tables"
+MESSAGE = "Remove birth_date_source and gender_source columns"
 REVISION = "heads"
 AUTOGENERATE = True
 
