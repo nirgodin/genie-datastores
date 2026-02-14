@@ -11,3 +11,6 @@ class LyricsSectionDocument(BaseDocument):
     lines: List[str]
     source: DataSource
     type: LyricsSectionType
+
+    class Settings:
+        name = "lyrics_sections"
