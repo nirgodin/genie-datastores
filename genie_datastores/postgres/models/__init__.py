@@ -17,6 +17,7 @@ from genie_datastores.postgres.models.orm.curators.curator_collection import Cur
 from genie_datastores.postgres.models.orm.decision import Decision
 from genie_datastores.postgres.models.orm.genius.genius_artist import GeniusArtist
 from genie_datastores.postgres.models.orm.genre import Genre
+from genie_datastores.postgres.models.orm.lyrics_section import LyricsSection
 from genie_datastores.postgres.models.orm.radio_track import RadioTrack
 from genie_datastores.postgres.models.orm.shazam.shazam_artist import ShazamArtist
 from genie_datastores.postgres.models.orm.shazam.shazam_top_track import ShazamTopTrack
@@ -62,6 +63,7 @@ __all__ = [
     "ChartEntry",
     "Decision",
     "Genre",
+    "LyricsSection",
     "RadioTrack",
     "Track",
     "TrackLyrics",
@@ -73,4 +75,5 @@ __all__ = [
     "CuratedTrack",
     "CuratorCollection",
     "Curator",
+
 ]

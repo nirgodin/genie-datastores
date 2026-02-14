@@ -1,6 +1,6 @@
 import subprocess
 
-MESSAGE = "Remove birth_date_source and gender_source columns"
+MESSAGE = "Add lyrics sections table"
 REVISION = "heads"
 AUTOGENERATE = True
 
